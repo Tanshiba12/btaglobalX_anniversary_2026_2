@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="title">
+  <title id="title">Gold award plaque</title>
+  <rect x="60" y="66" width="780" height="388" rx="34" fill="#f6c83f" stroke="#101010" stroke-width="28"/>
+  <circle cx="224" cy="260" r="86" fill="#fff7df" stroke="#101010" stroke-width="22"/>
+  <rect x="370" y="176" width="332" height="38" rx="19" fill="#101010"/>
+  <rect x="370" y="260" width="260" height="32" rx="16" fill="#101010"/>
+  <rect x="370" y="336" width="184" height="32" rx="16" fill="#101010"/>
+</svg>

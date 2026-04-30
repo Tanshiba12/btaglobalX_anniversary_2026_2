@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="Generated creative market asset placeholder">
+  <rect width="1200" height="900" fill="#FF6B5C"/>
+  <rect x="110" y="130" width="250" height="230" fill="#FFF4D7" stroke="#080808" stroke-width="9"/>
+  <rect x="150" y="175" width="170" height="118" fill="#F6C83F" stroke="#080808" stroke-width="7"/>
+  <rect x="435" y="90" width="300" height="260" fill="#FFFFFF" stroke="#080808" stroke-width="9" transform="rotate(5 585 220)"/>
+  <rect x="500" y="145" width="170" height="135" fill="#7B4DFF" stroke="#080808" stroke-width="7"/>
+  <path d="M120 555h260l42 90H78z" fill="#55E6A5" stroke="#080808" stroke-width="9"/>
+  <rect x="118" y="645" width="265" height="145" fill="#FFF4D7" stroke="#080808" stroke-width="9"/>
+  <path d="M650 540h300l50 98H600z" fill="#F6C83F" stroke="#080808" stroke-width="9"/>
+  <rect x="642" y="638" width="316" height="150" fill="#FFFFFF" stroke="#080808" stroke-width="9"/>
+  <circle cx="950" cy="220" r="92" fill="#55E6A5" stroke="#080808" stroke-width="9"/>
+</svg>

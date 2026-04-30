@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="Generated red carpet runway asset placeholder">
+  <rect width="1200" height="900" fill="#FFFFFF"/>
+  <path d="M0 650l1200-130v180L0 850z" fill="#C5162E" stroke="#080808" stroke-width="9"/>
+  <rect x="90" y="120" width="300" height="330" fill="#FFF4D7" stroke="#080808" stroke-width="9"/>
+  <g fill="#080808">
+    <circle cx="145" cy="180" r="14"/><circle cx="220" cy="180" r="14"/><circle cx="295" cy="180" r="14"/>
+    <circle cx="145" cy="255" r="14"/><circle cx="220" cy="255" r="14"/><circle cx="295" cy="255" r="14"/>
+    <circle cx="145" cy="330" r="14"/><circle cx="220" cy="330" r="14"/><circle cx="295" cy="330" r="14"/>
+  </g>
+  <rect x="475" y="165" width="95" height="310" rx="47" fill="#080808" transform="rotate(-16 522 320)"/>
+  <rect x="640" y="135" width="430" height="120" fill="#FF4EA3" stroke="#080808" stroke-width="9" transform="rotate(6 855 195)"/>
+  <rect x="690" y="300" width="340" height="180" fill="#42D8FF" stroke="#080808" stroke-width="9" transform="rotate(-4 860 390)"/>
+  <circle cx="1030" cy="165" r="70" fill="#F6C83F" stroke="#080808" stroke-width="8"/>
+</svg>

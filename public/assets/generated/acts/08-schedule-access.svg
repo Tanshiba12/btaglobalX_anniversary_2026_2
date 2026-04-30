@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="Generated schedule access asset placeholder">
+  <rect width="1200" height="900" fill="#FFF4D7"/>
+  <rect x="120" y="150" width="900" height="120" fill="#F6C83F" stroke="#080808" stroke-width="9"/>
+  <circle cx="250" cy="210" r="34" fill="#080808"/>
+  <circle cx="570" cy="210" r="34" fill="#080808"/>
+  <circle cx="890" cy="210" r="34" fill="#080808"/>
+  <rect x="120" y="330" width="160" height="350" fill="#FFFFFF" stroke="#080808" stroke-width="9" transform="rotate(-5 200 505)"/>
+  <rect x="310" y="320" width="160" height="360" fill="#F6C83F" stroke="#080808" stroke-width="9" transform="rotate(3 390 500)"/>
+  <rect x="500" y="330" width="160" height="350" fill="#C9D0D6" stroke="#080808" stroke-width="9" transform="rotate(-3 580 505)"/>
+  <rect x="690" y="320" width="160" height="360" fill="#F6C83F" stroke="#080808" stroke-width="9" transform="rotate(5 770 500)"/>
+  <rect x="880" y="330" width="160" height="350" fill="#DCE9F6" stroke="#080808" stroke-width="9" transform="rotate(-4 960 505)"/>
+  <rect x="780" y="720" width="260" height="90" rx="18" fill="#F04B37" stroke="#080808" stroke-width="9"/>
+</svg>

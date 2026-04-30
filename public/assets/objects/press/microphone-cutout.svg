@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 900" role="img" aria-labelledby="title">
+  <title id="title">Microphone cutout</title>
+  <rect x="178" y="314" width="64" height="428" rx="28" fill="#101010"/>
+  <rect x="112" y="742" width="196" height="54" rx="27" fill="#101010"/>
+  <rect x="76" y="80" width="268" height="292" rx="134" fill="#fff7df" stroke="#101010" stroke-width="30"/>
+  <path d="M122 205h176M122 268h176" stroke="#101010" stroke-width="22" stroke-linecap="round"/>
+  <path d="M82 286c0 96 58 158 128 158s128-62 128-158" fill="none" stroke="#101010" stroke-width="28" stroke-linecap="round"/>
+</svg>

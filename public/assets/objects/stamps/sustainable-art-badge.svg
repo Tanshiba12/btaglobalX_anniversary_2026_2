@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700" role="img" aria-labelledby="title">
+  <title id="title">Sustainable art badge</title>
+  <circle cx="350" cy="350" r="300" fill="#2b7fff" stroke="#101010" stroke-width="32"/>
+  <path d="M220 386c108-22 179-99 229-210 44 127 21 230-66 292-74 52-151 36-209 7 32-15 51-42 46-89z" fill="#79e2bd" stroke="#101010" stroke-width="24"/>
+  <path d="M222 512c110-100 192-170 292-258" fill="none" stroke="#fff7df" stroke-width="28" stroke-linecap="round"/>
+</svg>

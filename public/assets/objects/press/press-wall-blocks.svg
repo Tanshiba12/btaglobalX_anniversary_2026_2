@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 900" role="img" aria-labelledby="title">
+  <title id="title">Press wall blocks</title>
+  <rect width="1500" height="900" fill="#fff7df"/>
+  <g stroke="#101010" stroke-width="14">
+    <rect x="70" y="72" width="240" height="118" fill="#ffffff"/>
+    <rect x="370" y="72" width="240" height="118" fill="#f6c83f"/>
+    <rect x="670" y="72" width="240" height="118" fill="#ffffff"/>
+    <rect x="970" y="72" width="240" height="118" fill="#f04f3f"/>
+    <rect x="190" y="250" width="240" height="118" fill="#ffffff"/>
+    <rect x="490" y="250" width="240" height="118" fill="#2b7fff"/>
+    <rect x="790" y="250" width="240" height="118" fill="#ffffff"/>
+    <rect x="1090" y="250" width="240" height="118" fill="#f6c83f"/>
+    <rect x="70" y="428" width="240" height="118" fill="#ffffff"/>
+    <rect x="370" y="428" width="240" height="118" fill="#79e2bd"/>
+    <rect x="670" y="428" width="240" height="118" fill="#ffffff"/>
+    <rect x="970" y="428" width="240" height="118" fill="#f04f3f"/>
+  </g>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title">
+  <title id="title">Open magazine page spread</title>
+  <rect x="80" y="100" width="700" height="800" rx="24" fill="#fff7df" stroke="#101010" stroke-width="26"/>
+  <rect x="820" y="100" width="700" height="800" rx="24" fill="#79e2bd" stroke="#101010" stroke-width="26"/>
+  <path d="M800 110v780" stroke="#101010" stroke-width="18"/>
+  <rect x="150" y="180" width="560" height="330" rx="20" fill="#f04f3f" stroke="#101010" stroke-width="18"/>
+  <rect x="900" y="180" width="540" height="82" rx="18" fill="#101010"/>
+  <rect x="900" y="350" width="440" height="48" rx="24" fill="#101010"/>
+  <rect x="900" y="470" width="500" height="48" rx="24" fill="#101010"/>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 760" role="img" aria-labelledby="title">
+  <title id="title">Access pass template set</title>
+  <use href="#pass" x="20" fill="#fff7df"/>
+  <use href="#pass" x="370" fill="#101010"/>
+  <use href="#pass" x="720" fill="#d9dde2"/>
+  <use href="#pass" x="1070" fill="#f6c83f"/>
+  <use href="#pass" x="1420" fill="#dceeff"/>
+  <defs>
+    <path id="pass" d="M30 58h300v164c-34 0-62 28-62 62s28 62 62 62v328H30V346c34 0 62-28 62-62s-28-62-62-62z" stroke="#101010" stroke-width="22"/>
+  </defs>
+</svg>

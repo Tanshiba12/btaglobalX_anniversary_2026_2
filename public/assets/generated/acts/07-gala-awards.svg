@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="Generated gala awards asset placeholder">
+  <rect width="1200" height="900" fill="#080808"/>
+  <circle cx="250" cy="640" r="82" fill="#FFF4D7" stroke="#080808" stroke-width="9"/>
+  <circle cx="430" cy="680" r="82" fill="#FFF4D7" stroke="#080808" stroke-width="9"/>
+  <circle cx="610" cy="640" r="82" fill="#FFF4D7" stroke="#080808" stroke-width="9"/>
+  <path d="M650 180h170v90c0 55-33 102-80 122v98h70v72H660v-72h70v-98c-47-20-80-67-80-122z" fill="#F6C83F" stroke="#080808" stroke-width="10"/>
+  <rect x="120" y="175" width="275" height="100" fill="#F6C83F" stroke="#080808" stroke-width="9" transform="rotate(-5 258 225)"/>
+  <rect x="145" y="315" width="275" height="100" fill="#FFF4D7" stroke="#080808" stroke-width="9" transform="rotate(6 282 365)"/>
+  <rect x="830" y="440" width="220" height="90" rx="45" fill="#F04B37" stroke="#080808" stroke-width="9"/>
+  <rect x="900" y="570" width="220" height="90" rx="45" fill="#225CFF" stroke="#080808" stroke-width="9"/>
+</svg>

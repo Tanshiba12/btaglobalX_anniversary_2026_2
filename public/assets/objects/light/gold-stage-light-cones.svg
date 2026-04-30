@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title">
+  <title id="title">Gold stage light cones</title>
+  <rect width="1600" height="900" fill="none"/>
+  <path d="M388 0h160l270 900H90z" fill="#f6c83f" opacity=".44"/>
+  <path d="M722 0h160l270 900H430z" fill="#fff7df" opacity=".3"/>
+  <path d="M1056 0h160l294 900H760z" fill="#f6c83f" opacity=".44"/>
+</svg>

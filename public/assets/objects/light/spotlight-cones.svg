@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title">
+  <title id="title">Soft block spotlight cones</title>
+  <rect width="1600" height="900" fill="none"/>
+  <path d="M150 0h170l250 900H0z" fill="#79e2bd" opacity=".46"/>
+  <path d="M715 0h170l250 900H465z" fill="#fff7df" opacity=".5"/>
+  <path d="M1280 0h170l150 900H1030z" fill="#79e2bd" opacity=".42"/>
+</svg>

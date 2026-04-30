@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 760" role="img" aria-labelledby="title">
+  <title id="title">Final RSVP stamp</title>
+  <circle cx="380" cy="380" r="308" fill="#f6c83f" stroke="#101010" stroke-width="34"/>
+  <circle cx="380" cy="380" r="210" fill="none" stroke="#101010" stroke-width="22" stroke-dasharray="42 26"/>
+  <path d="M282 414l64 62 146-196" fill="none" stroke="#101010" stroke-width="48" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

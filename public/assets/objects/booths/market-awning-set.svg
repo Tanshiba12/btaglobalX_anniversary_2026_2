@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 460" role="img" aria-labelledby="title">
+  <title id="title">Market awning set</title>
+  <rect width="1600" height="460" fill="none"/>
+  <g stroke="#101010" stroke-width="22">
+    <path d="M70 90h320l-42 166H112z" fill="#f6c83f"/>
+    <path d="M456 90h320l-42 166H498z" fill="#79e2bd"/>
+    <path d="M842 90h320l-42 166H884z" fill="#fff7df"/>
+    <path d="M1228 90h320l-42 166h-236z" fill="#f04f3f"/>
+    <path d="M112 256v138M348 256v138M498 256v138M734 256v138M884 256v138M1120 256v138M1270 256v138M1506 256v138"/>
+  </g>
+</svg>

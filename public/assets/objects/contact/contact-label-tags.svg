@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 720" role="img" aria-labelledby="title">
+  <title id="title">Contact label tags</title>
+  <g stroke="#101010" stroke-width="22">
+    <path d="M76 82h690l126 110-126 110H76z" fill="#f6c83f"/>
+    <path d="M76 332h610l110 96-110 96H76z" fill="#79e2bd"/>
+    <path d="M76 558h500l82 72-82 72H76z" fill="#fff7df"/>
+  </g>
+  <circle cx="720" cy="192" r="22" fill="#101010"/>
+  <circle cx="642" cy="428" r="22" fill="#101010"/>
+  <circle cx="536" cy="630" r="22" fill="#101010"/>
+</svg>

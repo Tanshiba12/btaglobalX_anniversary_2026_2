@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 520" role="img" aria-labelledby="title">
+  <title id="title">Lucky draw capsules</title>
+  <g stroke="#101010" stroke-width="24">
+    <rect x="72" y="110" width="300" height="130" rx="65" fill="#f04f3f"/>
+    <rect x="430" y="110" width="300" height="130" rx="65" fill="#f6c83f"/>
+    <rect x="788" y="110" width="240" height="130" rx="65" fill="#79e2bd"/>
+    <rect x="230" y="306" width="300" height="130" rx="65" fill="#2b7fff"/>
+    <rect x="588" y="306" width="300" height="130" rx="65" fill="#fff7df"/>
+  </g>
+</svg>
