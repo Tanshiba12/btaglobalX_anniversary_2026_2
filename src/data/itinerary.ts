@@ -4,35 +4,41 @@ export const itinerary: ItinerarySegment[] = [
   {
     time: "3:00 PM - 5:00 PM",
     title: "Segment 1",
-    scene: "Forum, Bazaar, Art, Magazine",
+    scene: "Forum & Wellness",
     activities: [
-      "Event Opening",
-      "Life Management & Mental Well-being Forum 2026 opening",
-      "Speakers' Speech",
+      "VIP & Guest Entry",
+      "Event Opening & Anniversary Ceremony",
+      "Guest Speaker Speech",
       "Panel Discussion: The Mind & Life Management",
       "Bazaar & Wellness Fair",
-      "Sustainable Creative Art Exhibition",
-      "Magazine Launch & Media Exposure",
-      "Unveiling Strategic Alliance"
+      "Sustainable Creative Art Exhibition"
     ]
   },
   {
-    time: "6:00 PM - 7:00 PM",
+    time: "5:00 PM - 6:30 PM",
     title: "Segment 2",
-    scene: "Anniversary, Red Carpet, Culture",
+    scene: "Media & Alliance",
     activities: [
-      "Anniversary Celebration",
+      "Magazine Launch & Media Exposure",
+      "Unveiling Strategic Alliance",
+      "Networking & Photoshoot"
+    ]
+  },
+  {
+    time: "6:30 PM - 7:00 PM",
+    title: "Segment 3",
+    scene: "Red Carpet & Culture",
+    activities: [
       "Red Carpet & Exclusive Interviews",
-      "Networking & Photoshoot",
-      "Intercultural Music & Dance Performance"
+      "Intercultural Music & Welcome Dance"
     ]
   },
   {
     time: "7:00 PM - 10:30 PM",
-    title: "Segment 3",
-    scene: "Dinner, Fashion, Awards, Finale",
+    title: "Segment 4",
+    scene: "Gala & Awards",
     activities: [
-      "Gala Dinner & Global Networking",
+      "Gala Dinner & Cultural Show",
       "Heritage Fashion Show",
       "Excellence Award 2026",
       "Lucky Draw",

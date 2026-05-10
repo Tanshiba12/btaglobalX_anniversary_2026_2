@@ -1,67 +1,5 @@
 import type { LucideIcon } from "lucide-react";
 
-export type ActPalette =
-  | "invitation"
-  | "map"
-  | "forum"
-  | "market"
-  | "premiere"
-  | "runway"
-  | "awards"
-  | "desk"
-  | "finale";
-
-export type ActMotif =
-  | "invitation"
-  | "stickers"
-  | "speech-board"
-  | "market-grid"
-  | "magazine"
-  | "press-runway"
-  | "trophy-stage"
-  | "access-desk"
-  | "scrapbook";
-
-export type ActMotion =
-  | "label-drop"
-  | "sticker-stack"
-  | "card-flip"
-  | "paper-tear"
-  | "page-hinge"
-  | "flash-fold"
-  | "plaque-stamp"
-  | "ticket-compare"
-  | "scrapbook-snap";
-
-export type ActLayout =
-  | "hero-invitation"
-  | "event-sticker-map"
-  | "forum-lab-board"
-  | "creative-market-wall"
-  | "premiere-editorial"
-  | "red-carpet-runway"
-  | "gala-awards-stage"
-  | "schedule-access-desk"
-  | "gallery-finale-loop";
-
-export type MotionRecipe =
-  | "heroLabels"
-  | "mapStickers"
-  | "forumBubbles"
-  | "marketFrames"
-  | "premierePages"
-  | "runwayFold"
-  | "awardsStage"
-  | "accessDesk"
-  | "finaleScrapbook";
-
-export type DetailPayload = {
-  title: string;
-  eyebrow?: string;
-  body: string;
-  items?: string[];
-};
-
 export type EventPartner = {
   role: string;
   name: string;
@@ -103,35 +41,31 @@ export type RegistrationPackage = {
   benefits: string[];
 };
 
-export type ActConfig = {
-  id: string;
-  number: string;
-  label: string;
-  slotLabel: string;
-  title: string;
-  kicker: string;
-  body: string;
-  palette: ActPalette;
-  motif: ActMotif;
-  motion: ActMotion;
-  layout: ActLayout;
-  motionRecipe: MotionRecipe;
-  height: number;
-  durationWeight: number;
-  timelineBeats: string[];
-  transitionShape: string;
-  objects: string[];
-  clickTargets: string[];
-  assetPromptIds: string[];
-  primaryAsset: string;
-  contentPriority: "story" | "speakers" | "media" | "conversion" | "proof";
-  cta?: string;
+export type FaqItem = {
+  question: string;
+  answer: string;
 };
 
-export type GeneratedAsset = {
+export type JourneyAct = {
   id: string;
-  actId: string;
-  label: string;
-  path: string;
-  prompt: string;
+  number: number; // 1-10
+  title: string;
+  subtitle: string;
+  description: string;
+  highlights: Array<{
+    id: string;
+    label: string;
+    icon: LucideIcon;
+  }>;
+  subSections: Array<{
+    id: string;
+    label: string;
+    title: string;
+    description: string;
+    icon: LucideIcon;
+  }>;
+  image: string; // Path to media asset
+  mediaType?: "video" | "image" | "animation";
 };
+
+export type ActPair = [number, number];

@@ -1,5 +1,7 @@
-import { CinematicExperience } from "@/components/experience/CinematicExperience";
+'use client';
+
+import { ShowcaseExperience } from "@/components/experience/ShowcaseExperience";
 
 export default function Home() {
-  return <CinematicExperience />;
+  return <ShowcaseExperience />;
 }
