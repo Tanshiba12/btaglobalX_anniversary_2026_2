@@ -1,0 +1,757 @@
+html {
+  scroll-padding-top: clamp(5rem, 9vw, 7rem);
+}
+
+.site-section,
+.showcase-footer,
+.world-scroll {
+  scroll-margin-top: clamp(4.5rem, 8vw, 6.5rem);
+}
+
+.sticky-bottom-bar.is-hidden,
+.sticky-bottom-bar.is-docked {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(1.1rem) scale(0.98);
+  visibility: hidden;
+}
+
+.dock-reveal a span {
+  font-size: 0.68rem;
+  font-weight: 950;
+  letter-spacing: 0;
+}
+
+.world-scroll {
+  min-height: calc(var(--world-chapter-count) * 36svh);
+}
+
+.world-stage-shell {
+  padding-bottom: max(4.8rem, calc(var(--site-safe-inset) + 3rem));
+  padding-top: max(6rem, calc(var(--site-safe-inset) + 4rem));
+}
+
+.world-panel-stack {
+  width: min(34rem, 42vw);
+}
+
+.world-panel {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.05)),
+    rgba(5, 5, 9, 0.68);
+  backdrop-filter: blur(18px);
+}
+
+.world-panel h2 {
+  font-size: clamp(2.4rem, 4.8vw, 4.6rem);
+}
+
+.world-status-card,
+.world-progress-rail {
+  bottom: max(7rem, calc(var(--site-safe-inset) + 5rem));
+}
+
+.experience-world {
+  opacity: 0.72;
+}
+
+.hero-sponsor-strip {
+  --sponsor-gap: clamp(0.85rem, 1.7vw, 1.35rem);
+  --sponsor-visible: 5;
+  overflow: hidden;
+}
+
+.hero-sponsor-window {
+  overflow: hidden;
+}
+
+.hero-sponsor-marquee {
+  animation: sponsor-marquee 38s linear infinite;
+  justify-content: flex-start;
+  overflow: visible;
+}
+
+.hero-sponsor-item {
+  flex: 0 0 calc((100vw - (var(--sponsor-gap) * (var(--sponsor-visible) - 1))) / var(--sponsor-visible));
+  height: clamp(3rem, 6.4svh, 4.35rem);
+  min-width: 0;
+}
+
+.hero-sponsor-item img {
+  height: 100%;
+  max-width: 100%;
+  width: 100%;
+}
+
+.overview-section,
+.founder-message-section,
+.event-highlights-section,
+.timeline-section,
+.culture-fashion-section,
+.awards-section,
+.registration-section,
+.gallery-section,
+.location-section,
+.partners-section,
+.faq-section {
+  padding-top: clamp(6rem, 10vw, 8rem);
+}
+
+.overview-grid {
+  align-items: start;
+  grid-template-columns: minmax(18rem, 0.42fr) minmax(22rem, 0.58fr);
+}
+
+.overview-grid .section-heading {
+  position: sticky;
+  top: clamp(6rem, 10vw, 8rem);
+}
+
+.overview-grid .section-heading h2 {
+  font-size: clamp(3rem, 6.2vw, 6rem);
+  max-width: 9ch;
+}
+
+.overview-copy {
+  background: rgba(255, 255, 255, 0.66);
+  border: 1px solid rgba(11, 11, 18, 0.08);
+  border-radius: 0.5rem;
+  padding: clamp(1rem, 2.5vw, 1.6rem);
+}
+
+.overview-passport {
+  margin-top: clamp(0.5rem, 2vw, 1rem);
+}
+
+.founder-portrait-card {
+  top: clamp(6.5rem, 10vw, 8rem);
+}
+
+.event-journey-section {
+  background:
+    radial-gradient(circle at 80% 10%, rgba(255, 78, 163, 0.16), transparent 24rem),
+    radial-gradient(circle at 15% 18%, rgba(70, 216, 255, 0.15), transparent 22rem),
+    var(--night) !important;
+  color: var(--paper);
+  display: block;
+  min-height: auto;
+  overflow: hidden;
+  padding: clamp(6rem, 10vw, 8rem) 0;
+}
+
+.event-journey-theatre {
+  display: grid;
+  gap: clamp(1rem, 3vw, 2rem);
+}
+
+.event-journey-cinema-intro {
+  margin: 0;
+  max-width: 58rem;
+  padding: 0;
+}
+
+.event-journey-cinema-intro h2 {
+  font-size: clamp(3rem, 7.2vw, 7rem);
+  max-width: 10ch;
+}
+
+.event-journey-rail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  left: auto;
+  position: relative;
+  top: auto;
+  width: auto;
+  z-index: 2;
+}
+
+.event-journey-feature {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 0.65rem;
+  box-shadow: var(--cinema-shadow);
+  display: grid;
+  grid-template-columns: minmax(20rem, 0.58fr) minmax(20rem, 0.42fr);
+  min-height: clamp(30rem, 65svh, 43rem);
+  overflow: hidden;
+}
+
+.event-journey-feature-media {
+  min-height: 22rem;
+  position: relative;
+}
+
+.event-journey-feature-media::after {
+  background:
+    radial-gradient(circle at 72% 28%, rgba(253, 209, 66, 0.2), transparent 19rem),
+    linear-gradient(90deg, transparent 48%, rgba(5, 5, 9, 0.34));
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.event-journey-feature-media img,
+.event-journey-scene-media img {
+  object-fit: cover;
+}
+
+.event-journey-feature-copy,
+.event-journey-scene-copy {
+  align-content: center;
+  display: grid;
+  gap: 0.85rem;
+  padding: clamp(1.2rem, 3vw, 2rem);
+  position: relative;
+  z-index: 2;
+}
+
+.event-journey-feature-copy>span,
+.event-journey-scene-copy>span {
+  color: var(--accent-primary);
+  font-size: 0.8rem;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.event-journey-feature-copy h3,
+.event-journey-scene-copy h3 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 6.5rem);
+  line-height: 0.84;
+  margin: 0;
+  max-width: 9ch;
+  text-transform: uppercase;
+}
+
+.event-journey-feature-copy p,
+.event-journey-scene-copy p {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: clamp(0.95rem, 1.25vw, 1.08rem);
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.event-journey-cinema-stack {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0;
+  max-width: none;
+  padding: 0;
+}
+
+@media (min-width: 901px) {
+  .event-journey-theatre {
+    align-items: start;
+    grid-template-columns: minmax(18rem, 0.36fr) minmax(0, 0.64fr);
+  }
+
+  .event-journey-cinema-intro,
+  .event-journey-rail {
+    grid-column: 1;
+  }
+
+  .event-journey-cinema-intro {
+    position: relative;
+    z-index: 3;
+  }
+
+  .event-journey-cinema-intro h2 {
+    font-size: clamp(3rem, 4.9vw, 5.35rem);
+    max-width: 8ch;
+  }
+
+  .event-journey-feature {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    min-height: clamp(34rem, 70svh, 46rem);
+    position: relative;
+    z-index: 2;
+  }
+
+  .event-journey-cinema-stack {
+    grid-column: 1 / -1;
+  }
+
+  .forum-cinema-inner {
+    align-items: start;
+    grid-template-columns: minmax(18rem, 0.34fr) minmax(0, 0.66fr);
+  }
+
+  .forum-cinema-inner>.section-heading {
+    grid-column: 1;
+    margin: 0;
+    position: sticky;
+    top: clamp(6.5rem, 10vw, 8rem);
+  }
+
+  .forum-cinema-inner>.section-heading h2 {
+    font-size: clamp(3rem, 4.8vw, 5rem);
+    max-width: 8ch;
+  }
+
+  .speaker-cinema-index {
+    align-self: start;
+    grid-column: 1;
+    position: sticky;
+    top: clamp(31rem, 54svh, 34rem);
+  }
+
+  .speaker-cinema-stack {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
+}
+
+.event-journey-cinema-card {
+  align-items: stretch;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 0.65rem;
+  box-shadow: none;
+  display: grid;
+  min-height: 31rem;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  top: auto;
+}
+
+.event-journey-scene-media {
+  min-height: 12rem;
+  position: relative;
+}
+
+.event-journey-scene-media::after {
+  background: linear-gradient(180deg, transparent 32%, rgba(5, 5, 9, 0.82));
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.event-journey-scene-copy {
+  align-content: start;
+  padding-top: 1.1rem;
+}
+
+.event-journey-scene-copy h3 {
+  font-size: clamp(2.2rem, 3.4vw, 3.5rem);
+}
+
+.event-journey-scene-number {
+  display: none;
+}
+
+.forum-deep-section {
+  background:
+    radial-gradient(circle at 18% 10%, rgba(70, 216, 255, 0.18), transparent 24rem),
+    radial-gradient(circle at 78% 25%, rgba(253, 209, 66, 0.12), transparent 22rem),
+    var(--night);
+  overflow: hidden;
+  padding-top: clamp(6rem, 10vw, 8rem);
+}
+
+.forum-cinema-inner {
+  display: grid;
+  gap: clamp(1rem, 3vw, 2rem);
+}
+
+.speaker-cinema-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.speaker-cinema-index a {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.76);
+  display: inline-flex;
+  font-size: 0.72rem;
+  font-weight: 950;
+  height: 2.3rem;
+  justify-content: center;
+  width: 2.3rem;
+}
+
+.speaker-cinema-index a:hover,
+.speaker-cinema-index a:focus-visible {
+  background: var(--accent-primary);
+  color: var(--ink);
+  outline: 0;
+}
+
+.speaker-cinema-stack {
+  display: grid;
+  gap: clamp(1rem, 2.5vw, 1.6rem);
+}
+
+.speaker-cinema-scene {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 0.65rem;
+  box-shadow: var(--cinema-shadow);
+  display: grid;
+  grid-template-columns: minmax(15rem, 0.34fr) minmax(0, 0.66fr);
+  min-height: clamp(30rem, 58svh, 40rem);
+  overflow: hidden;
+  padding: clamp(1rem, 3vw, 1.6rem);
+  position: relative;
+  top: auto;
+}
+
+.speaker-cinema-scene:nth-child(even) {
+  grid-template-columns: minmax(0, 0.66fr) minmax(15rem, 0.34fr);
+}
+
+.speaker-cinema-scene:nth-child(even) .speaker-portrait-stage {
+  order: 2;
+}
+
+.speaker-cinema-scene:nth-child(even) .speaker-scene-copy {
+  order: 1;
+}
+
+.speaker-scene-backdrop {
+  opacity: 0.28;
+}
+
+.speaker-portrait-stage {
+  align-self: center;
+  min-height: clamp(21rem, 42svh, 30rem);
+  z-index: 3;
+}
+
+.speaker-scene-copy {
+  align-self: center;
+  background: rgba(5, 5, 9, 0.62);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0.55rem;
+  padding: clamp(1rem, 2.4vw, 1.55rem);
+}
+
+.speaker-scene-copy>span {
+  font-size: clamp(3.2rem, 6vw, 5.8rem);
+}
+
+.speaker-scene-copy h3 {
+  font-size: clamp(2.25rem, 4.2vw, 4.55rem);
+  max-width: 9ch;
+}
+
+.speaker-scene-copy blockquote {
+  font-size: clamp(1.1rem, 1.85vw, 1.65rem);
+  line-height: 1.26;
+  max-width: 42rem;
+}
+
+.timeline-section {
+  height: auto;
+  max-height: none;
+  min-height: 100svh;
+  overflow: hidden;
+  padding-bottom: clamp(5rem, 8vw, 7rem);
+  place-items: initial;
+}
+
+.timeline-pin {
+  min-height: calc(100svh - clamp(3rem, 6vw, 5rem));
+  padding-top: clamp(1rem, 3vw, 2rem);
+}
+
+.timeline-header {
+  align-items: start;
+}
+
+.timeline-current {
+  max-width: 20rem;
+}
+
+.timeline-current strong {
+  font-size: clamp(1.45rem, 2.4vw, 2.25rem);
+  line-height: 0.95;
+}
+
+.timeline-card {
+  border-radius: 0.65rem;
+}
+
+.timeline-card h3 {
+  font-size: clamp(2.2rem, min(4.2vw, 6.4svh), 4.2rem);
+}
+
+.registration-section {
+  overflow: hidden;
+  padding-bottom: clamp(5rem, 8vw, 7rem);
+}
+
+.registration-slide-heading h3 {
+  font-size: clamp(2.6rem, min(5.2vw, 8.2svh), 5rem);
+}
+
+.gallery-section,
+.location-section {
+  overflow: hidden;
+}
+
+@media (max-width: 1120px) {
+  .event-journey-cinema-stack {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  html {
+    scroll-padding-top: 4.5rem;
+  }
+
+  .sticky-bottom-bar {
+    bottom: max(0.6rem, var(--site-safe-inset));
+  }
+
+  .dock-controls {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .dock-capsule {
+    display: none;
+  }
+
+  .dock-nav {
+    display: grid;
+    gap: 0.12rem;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    justify-content: stretch;
+    min-height: 2.55rem;
+    overflow: visible;
+    padding: 0.25rem;
+  }
+
+  .dock-nav a {
+    font-size: 0.56rem;
+    min-height: 2rem;
+    min-width: 0;
+    padding: 0.48rem 0.18rem;
+  }
+
+  .sticky-header-logo {
+    height: clamp(4.4rem, 16vw, 5.7rem);
+    width: clamp(4.4rem, 16vw, 5.7rem);
+  }
+
+  .hero-content {
+    padding-bottom: clamp(10rem, 18svh, 12.5rem);
+    padding-top: clamp(5.2rem, 11svh, 6.5rem);
+  }
+
+  .hero-countdown-card {
+    justify-self: start;
+    margin-top: clamp(2.7rem, 8vw, 4.6rem);
+    width: min(17rem, 82vw);
+  }
+
+  .hero-event-lockup {
+    margin-top: clamp(1rem, 3svh, 2rem);
+  }
+
+  .hero-sponsor-strip {
+    --sponsor-visible: 4;
+    bottom: clamp(4.2rem, 8.5svh, 5.8rem);
+  }
+
+  .hero-sponsor-marquee {
+    animation-duration: 34s;
+    gap: var(--sponsor-gap);
+    overflow: visible;
+  }
+
+  .world-scroll {
+    min-height: calc(var(--world-chapter-count) * 40svh);
+  }
+
+  .world-panel-stack {
+    align-self: center;
+    min-height: min(60svh, 31rem);
+    width: 100%;
+  }
+
+  .world-compass,
+  .world-status-card {
+    display: none;
+  }
+
+  .overview-section,
+  .founder-message-section,
+  .event-highlights-section,
+  .timeline-section,
+  .culture-fashion-section,
+  .awards-section,
+  .registration-section,
+  .gallery-section,
+  .location-section,
+  .partners-section,
+  .faq-section {
+    padding-top: clamp(4.6rem, 12vw, 6rem);
+  }
+
+  .overview-grid,
+  .event-journey-feature,
+  .speaker-cinema-scene,
+  .speaker-cinema-scene:nth-child(even),
+  .location-card {
+    grid-template-columns: 1fr;
+  }
+
+  .overview-grid .section-heading {
+    position: relative;
+    top: auto;
+  }
+
+  .overview-grid .section-heading h2,
+  .founder-copy h2,
+  .section-heading h2 {
+    font-size: clamp(2.55rem, 13vw, 4.7rem);
+  }
+
+  .overview-passport {
+    grid-template-columns: 1fr;
+  }
+
+  .overview-passport article {
+    min-height: 0;
+  }
+
+  .event-journey-section {
+    padding: clamp(4.8rem, 13vw, 6.5rem) 0;
+  }
+
+  .event-journey-rail {
+    display: grid;
+    gap: 0.3rem;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    flex-wrap: nowrap;
+    overflow: visible;
+    padding-bottom: 0.2rem;
+  }
+
+  .event-journey-rail a {
+    height: 2rem;
+    width: auto;
+  }
+
+  .event-journey-cinema-stack {
+    grid-template-columns: 1fr;
+  }
+
+  .event-journey-feature,
+  .event-journey-cinema-card,
+  .speaker-cinema-scene {
+    min-height: auto;
+  }
+
+  .event-journey-feature-media,
+  .event-journey-scene-media {
+    min-height: 15rem;
+  }
+
+  .speaker-cinema-scene:nth-child(even) .speaker-portrait-stage,
+  .speaker-cinema-scene:nth-child(even) .speaker-scene-copy {
+    order: initial;
+  }
+
+  .speaker-portrait-stage {
+    min-height: 19rem;
+  }
+
+  .timeline-section,
+  .registration-section {
+    height: auto;
+    max-height: none;
+    min-height: auto;
+  }
+
+  .timeline-current {
+    max-width: none;
+  }
+
+  .timeline-card {
+    min-height: 26rem;
+  }
+
+  .registration-pin {
+    min-height: auto;
+  }
+
+  .registration-slide-heading {
+    gap: 0.65rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero-content {
+    padding-bottom: 9.3rem;
+    padding-top: 4.9rem;
+  }
+
+  .hero-countdown-card {
+    margin-top: 3.6rem;
+    padding: 0.68rem;
+    width: min(15.8rem, 86vw);
+  }
+
+  .hero-countdown-caption {
+    font-size: 0.62rem;
+  }
+
+  .hero-sponsor-strip {
+    --sponsor-visible: 3;
+    bottom: 3.95rem;
+    min-height: 3.8rem;
+  }
+
+  .hero-sponsor-label {
+    font-size: 0.54rem;
+    max-width: calc(100vw - 1.5rem);
+    padding: 0.48rem 0.75rem;
+  }
+
+  .hero-title-main {
+    font-size: clamp(2.25rem, 12.8vw, 3.1rem);
+  }
+
+  .hero-title-awards {
+    font-size: clamp(1.55rem, 8.5vw, 2.05rem);
+  }
+
+  .world-panel h2,
+  .event-journey-cinema-intro h2,
+  .event-journey-feature-copy h3,
+  .speaker-scene-copy h3,
+  .registration-slide-heading h3 {
+    font-size: clamp(2.25rem, 12vw, 3.45rem);
+  }
+
+  .event-journey-feature-copy,
+  .event-journey-scene-copy,
+  .speaker-cinema-scene {
+    padding: 0.9rem;
+  }
+
+  .speaker-scene-copy blockquote {
+    font-size: clamp(1.05rem, 6vw, 1.45rem);
+  }
+
+  .timeline-card {
+    min-height: 28rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-sponsor-marquee {
+    animation: none;
+  }
+}

@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 760" role="img" aria-labelledby="title">
-  <title id="title">Signature access pass template</title>
-  <path d="M70 58h380v164c-42 0-76 34-76 76s34 76 76 76v328H70V374c42 0 76-34 76-76s-34-76-76-76z" fill="#101010" stroke="#101010" stroke-width="24"/>
-  <rect x="120" y="108" width="280" height="92" rx="18" fill="#f6c83f" stroke="#fff7df" stroke-width="16"/>
-  <rect x="120" y="454" width="280" height="34" rx="17" fill="#fff7df"/>
-  <rect x="120" y="532" width="220" height="28" rx="14" fill="#f6c83f"/>
-</svg>

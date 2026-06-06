@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" role="img" aria-labelledby="title">
-  <title id="title">Black tape strips</title>
-  <rect width="900" height="420" fill="none"/>
-  <rect x="64" y="70" width="270" height="58" rx="10" fill="#101010" transform="rotate(-8 199 99)"/>
-  <rect x="540" y="84" width="270" height="58" rx="10" fill="#101010" transform="rotate(8 675 113)"/>
-  <rect x="312" y="248" width="270" height="58" rx="10" fill="#101010" transform="rotate(4 447 277)"/>
-</svg>

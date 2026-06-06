@@ -17,6 +17,8 @@ export type Speaker = {
   name: string;
   role: "Keynote Speaker / Panel Discussion Moderator" | "Panelist";
   focus: string;
+  image?: string;
+  imageAlt?: string;
 };
 
 export type AwardCategory = {
@@ -66,6 +68,52 @@ export type JourneyAct = {
   }>;
   image: string; // Path to media asset
   mediaType?: "video" | "image" | "animation";
+  tone?: "arrival" | "venue" | "forum" | "market" | "media" | "runway" | "gala" | "access" | "finale";
 };
 
 export type ActPair = [number, number];
+
+export type Vector3Tuple = [number, number, number];
+
+export type CameraKeyframe = {
+  position: Vector3Tuple;
+  target: Vector3Tuple;
+};
+
+export type SceneActor = {
+  id: string;
+  image?: string;
+  label: string;
+  position: Vector3Tuple;
+  role: "founder" | "speaker" | "guest" | "sponsor";
+};
+
+export type SceneHotspot = {
+  label: string;
+  position: Vector3Tuple;
+};
+
+export type WorldScene = {
+  accent: string;
+  anchorId: string;
+  camera: CameraKeyframe;
+  copy: string;
+  environment: "arrival" | "map" | "founder" | "journey" | "forum" | "gala" | "finale";
+  id: string;
+  image?: string;
+  kicker: string;
+  title: string;
+  actors?: SceneActor[];
+  hotspots?: SceneHotspot[];
+};
+
+export type ScrollChapter = {
+  anchorId: string;
+  copy: string;
+  ctaHref?: string;
+  ctaLabel?: string;
+  id: string;
+  meta: string;
+  number: string;
+  title: string;
+};

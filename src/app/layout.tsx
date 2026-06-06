@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "BTA GlobalX Anniversary 3RD ANNIVERSARY & EXCELLENCE AWARDS 2026",
   description:
     "A block-color one-page event experience for BTA GlobalX Anniversary 3RD ANNIVERSARY & EXCELLENCE AWARDS 2026 at Hotel Sheraton Johor Bahru, Malaysia.",
+  icons: {
+    icon: [{ url: "/assets/brand/bta-logo.gif", type: "image/gif" }]
+  },
   openGraph: {
     title: "BTA GlobalX Anniversary 3RD ANNIVERSARY & EXCELLENCE AWARDS 2026",
     description:

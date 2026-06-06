@@ -17,6 +17,7 @@ import {
     Video,
     Zap
 } from "lucide-react";
+import { sceneAssets } from "@/data/assets";
 import type { ActPair, JourneyAct } from "@/types/content";
 
 export const journeyActs: JourneyAct[] = [
@@ -62,8 +63,9 @@ export const journeyActs: JourneyAct[] = [
                 icon: Sparkles
             }
         ],
-        image: "/assets/generated/acts/01-hero-invitation.svg",
-        mediaType: "image"
+        image: sceneAssets.arrival.src,
+        mediaType: "image",
+        tone: "arrival"
     },
     {
         id: "hero-invitation",
@@ -107,8 +109,9 @@ export const journeyActs: JourneyAct[] = [
                 icon: Mic2
             }
         ],
-        image: "/assets/generated/acts/01-hero-invitation.svg",
-        mediaType: "image"
+        image: sceneAssets.arrival.src,
+        mediaType: "image",
+        tone: "arrival"
     },
     {
         id: "event-map",
@@ -152,8 +155,9 @@ export const journeyActs: JourneyAct[] = [
                 icon: Calendar
             }
         ],
-        image: "/assets/generated/acts/02-event-map.svg",
-        mediaType: "image"
+        image: sceneAssets.venue.src,
+        mediaType: "image",
+        tone: "venue"
     },
     {
         id: "forum-lab",
@@ -197,8 +201,9 @@ export const journeyActs: JourneyAct[] = [
                 icon: Lightbulb
             }
         ],
-        image: "/assets/generated/acts/03-forum-lab.svg",
-        mediaType: "image"
+        image: sceneAssets.forum.src,
+        mediaType: "image",
+        tone: "forum"
     },
     {
         id: "creative-market",
@@ -242,8 +247,9 @@ export const journeyActs: JourneyAct[] = [
                 icon: Palette
             }
         ],
-        image: "/assets/generated/acts/04-creative-market.svg",
-        mediaType: "image"
+        image: sceneAssets.market.src,
+        mediaType: "image",
+        tone: "market"
     },
     {
         id: "premiere-magazine",
@@ -287,8 +293,9 @@ export const journeyActs: JourneyAct[] = [
                 icon: Handshake
             }
         ],
-        image: "/assets/generated/acts/05-premiere-magazine.svg",
-        mediaType: "image"
+        image: sceneAssets.media.src,
+        mediaType: "image",
+        tone: "media"
     },
     {
         id: "red-carpet-runway",
@@ -340,8 +347,9 @@ export const journeyActs: JourneyAct[] = [
                 icon: Sparkles
             }
         ],
-        image: "/assets/generated/acts/06-red-carpet-runway.svg",
-        mediaType: "image"
+        image: sceneAssets.runway.src,
+        mediaType: "image",
+        tone: "runway"
     },
     {
         id: "gala-awards",
@@ -385,8 +393,9 @@ export const journeyActs: JourneyAct[] = [
                 icon: Trophy
             }
         ],
-        image: "/assets/generated/acts/07-gala-awards.svg",
-        mediaType: "image"
+        image: sceneAssets.gala.src,
+        mediaType: "image",
+        tone: "gala"
     },
     {
         id: "schedule-access",
@@ -430,8 +439,9 @@ export const journeyActs: JourneyAct[] = [
                 icon: CheckCircle
             }
         ],
-        image: "/assets/generated/acts/08-schedule-access.svg",
-        mediaType: "image"
+        image: sceneAssets.access.src,
+        mediaType: "image",
+        tone: "access"
     },
     {
         id: "gallery-finale",
@@ -483,8 +493,9 @@ export const journeyActs: JourneyAct[] = [
                 icon: Sparkles
             }
         ],
-        image: "/assets/generated/acts/09-gallery-finale.svg",
-        mediaType: "image"
+        image: sceneAssets.finale.src,
+        mediaType: "image",
+        tone: "finale"
     }
 ];
 

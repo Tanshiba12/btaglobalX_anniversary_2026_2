@@ -1,8 +1,10 @@
 export { awardCategories } from "./awards";
+export * from "./assets";
 export { eventDetails, partners } from "./event";
 export { faqs } from "./faq";
 export { highlights } from "./highlights";
 export { itinerary } from "./itinerary";
 export { actPairs, journeyActs } from "./journey";
 export { registrationPackages } from "./registration";
-export { panelTopics, speakers } from "./speakers";
+export { panelTopics, speakerScenes, speakers } from "./speakers";
+export { scrollChapters, worldSceneCount, worldScenes } from "./world";

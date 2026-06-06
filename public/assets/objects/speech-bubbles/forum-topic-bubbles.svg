@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-labelledby="title">
-  <title id="title">Forum speech bubble set</title>
-  <rect width="1400" height="900" fill="none"/>
-  <path d="M108 115h390c53 0 96 43 96 96v112c0 53-43 96-96 96H296l-118 105 25-105h-95c-53 0-96-43-96-96V211c0-53 43-96 96-96z" fill="#fff7df" stroke="#101010" stroke-width="24"/>
-  <path d="M820 166h384c53 0 96 43 96 96v117c0 53-43 96-96 96h-82l30 107-128-107H820c-53 0-96-43-96-96V262c0-53 43-96 96-96z" fill="#79e2bd" stroke="#101010" stroke-width="24"/>
-  <path d="M446 574h454c48 0 86 39 86 86v82c0 48-39 86-86 86H702l-92 72 19-72H446c-48 0-86-39-86-86v-82c0-48 39-86 86-86z" fill="#f6c83f" stroke="#101010" stroke-width="24"/>
-</svg>
