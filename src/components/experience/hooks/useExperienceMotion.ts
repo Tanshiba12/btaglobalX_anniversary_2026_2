@@ -198,6 +198,51 @@ export function useExperienceMotion({
           }
         });
 
+        const journeySection = document.querySelector<HTMLElement>(".event-journey-section");
+        const journeyStage = document.querySelector<HTMLElement>("[data-journey-stage]");
+        const journeyFlow = document.querySelector<HTMLElement>("[data-journey-flow]");
+        const journeyLiquid = document.querySelector<HTMLElement>(".event-journey-liquid");
+        const journeyDots = Array.from(document.querySelectorAll<HTMLElement>(".event-journey-dots span"));
+        if (
+          journeySection &&
+          journeyStage &&
+          journeyFlow &&
+          window.matchMedia("(min-width: 901px)").matches
+        ) {
+          const getJourneyTravel = () => Math.max(0, journeyFlow.scrollWidth - journeyStage.clientWidth);
+          const setJourneyState = (progress: number) => {
+            const bounded = Math.min(1, Math.max(0, progress));
+            const activeIndex = Math.min(journeyDots.length - 1, Math.round(bounded * Math.max(0, journeyDots.length - 1)));
+            gsap.set(journeyFlow, {
+              x: -getJourneyTravel() * bounded,
+              rotateZ: Math.sin(bounded * Math.PI * 2) * 0.35
+            });
+            if (journeyLiquid) {
+              gsap.set(journeyLiquid, {
+                xPercent: -50 + Math.sin(bounded * Math.PI * 2) * 28,
+                yPercent: -50 + Math.cos(bounded * Math.PI * 2) * 14,
+                scale: 1 + Math.sin(bounded * Math.PI) * 0.22
+              });
+            }
+            journeyDots.forEach((dot, index) => {
+              dot.dataset.active = index === activeIndex ? "true" : "false";
+            });
+          };
+
+          ScrollTrigger.create({
+            anticipatePin: 1,
+            end: () => `+=${window.innerHeight * 5.6}`,
+            invalidateOnRefresh: true,
+            onRefresh: (self) => setJourneyState(self.progress),
+            onUpdate: (self) => setJourneyState(self.progress),
+            pin: journeyStage,
+            pinSpacing: true,
+            scrub: 0.75,
+            start: "top top",
+            trigger: journeySection
+          });
+        }
+
         const worldScroll = document.querySelector<HTMLElement>("[data-world-scroll]");
         if (worldScroll) {
           let currentChapter = -1;

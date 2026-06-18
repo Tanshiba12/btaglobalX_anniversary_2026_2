@@ -9,18 +9,18 @@
   --lime: #fdd142;
   --lime-strong: #fdd142;
   --gold: #e1b33f;
-  --red: #d63532;
-  --blue: #2458ff;
+  --red: #7c1428;
+  --blue: #0f7c63;
   --green: #fdd142;
-  --cyan: #46d8ff;
-  --pink: #ff4ea3;
+  --cyan: #0f7c63;
+  --pink: #7c1428;
   --silver: #c9d0d6;
   --platinum: #dce9f6;
   --night: #050509;
   --night-soft: #111118;
   --champagne: #fff7d7;
-  --electric-cyan: #46d8ff;
-  --ceremony-pink: #ff4ea3;
+  --electric-cyan: #0f7c63;
+  --ceremony-pink: #7c1428;
   --glass-line: rgba(255, 255, 255, 0.18);
   --cinema-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.38);
   --surface: var(--paper);
@@ -39,6 +39,6 @@
   --site-frame-gap: clamp(0.58rem, 1.35vmin, 1rem);
   --site-safe-inset: calc(var(--site-frame-size) + var(--site-frame-gap));
   --site-safe-width: calc(100vw - var(--site-safe-inset) - var(--site-safe-inset));
-  --font-display: Impact, "Arial Narrow", "Franklin Gothic Condensed", "Arial Black", system-ui, sans-serif;
-  --font-body: Inter, "Segoe UI", Arial, system-ui, sans-serif;
+  --font-display: "BTA Display", "Segoe UI", Arial, system-ui, sans-serif;
+  --font-body: "BTA Body", "Segoe UI", Arial, system-ui, sans-serif;
 }

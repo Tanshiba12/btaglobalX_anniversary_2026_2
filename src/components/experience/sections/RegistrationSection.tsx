@@ -19,7 +19,7 @@ export function RegistrationSection({ reducedMotion }: { reducedMotion: boolean 
         <div className="registration-hero" data-animate="card">
           <div>
             <p className="eyebrow">Registration</p>
-            <h2>Choose the pass that matches your role in the room.</h2>
+            <h2>Choose the pass that fits your place in the celebration.</h2>
           </div>
           <a className="dark-pill" href={`mailto:${eventDetails.email}`}>
             Contact registration

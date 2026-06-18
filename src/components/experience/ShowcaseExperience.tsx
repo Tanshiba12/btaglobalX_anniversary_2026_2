@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { Loader } from "./chrome/Loader";
 import { ShowcaseFooter } from "./chrome/ShowcaseFooter";
 import { StickyBottomBar } from "./chrome/StickyBottomBar";
 import { StickyHeader } from "./chrome/StickyHeader";
@@ -9,7 +8,6 @@ import { ExperienceWorld } from "./world/ExperienceWorld";
 import { useCountdown } from "./hooks/useCountdown";
 import { useDockMode } from "./hooks/useDockMode";
 import { useExperienceMotion } from "./hooks/useExperienceMotion";
-import { useLoaderSequence } from "./hooks/useLoaderSequence";
 import { useReducedMotion } from "./hooks/useReducedMotion";
 import { AwardsSection } from "./sections/AwardsSection";
 import { CultureFashionSection } from "./sections/CultureFashionSection";
@@ -31,7 +29,6 @@ import { worldSceneCount } from "@/data";
 export function ShowcaseExperience() {
   const rootRef = useRef<HTMLElement | null>(null);
   const reducedMotion = useReducedMotion();
-  const { loaderStep, loaderVisible, setLoaderVisible } = useLoaderSequence(reducedMotion);
   const dockMode = useDockMode();
   const [activeTimeline, setActiveTimeline] = useState(0);
   const [worldProgress, setWorldProgress] = useState(0);
@@ -54,7 +51,6 @@ export function ShowcaseExperience() {
       <ExperienceWorld activeSpeaker={activeSpeaker} progress={worldProgress} reducedMotion={reducedMotion} />
       <StickyHeader />
       <StickyBottomBar mode={dockMode} />
-      <Loader onSkip={() => setLoaderVisible(false)} step={loaderStep} visible={loaderVisible} />
       <HeroSection countdown={countdown} />
       <WorldStorySection
         activeIndex={activeWorldChapter}

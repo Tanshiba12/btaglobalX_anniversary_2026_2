@@ -59,18 +59,16 @@ export type TimelineBeat = {
 
 export const galleryImages = galleryAssets.previousEvents;
 export const overviewParagraphs = [
-  "An anniversary built as a living stage: wellness insight, cultural expression, media visibility, strategic alliance, gala networking, and public recognition moving through one day.",
-  "The experience is designed for guests, nominees, partners, sponsors, artists, speakers, and changemakers who need more than attendance. They need a room where their story is seen clearly.",
-  "From the forum opening to the award finale, every movement connects back to one promise: purpose meets recognition, and excellence finds its stage."
+  "BTA GlobalX celebrates its anniversary at Sheraton Johor Bahru through a full-day programme of insight, wellness discovery, media visibility, culture, gala dinner, and awards recognition.",
+  "Guests, nominees, partners, sponsors, speakers, and changemakers move through one connected celebration where every moment has a clear purpose: meet the right people, experience meaningful ideas, and honour excellence together.",
+  "From the welcome reception to the final award photographs, the day is shaped to feel joyful, premium, and easy to follow."
 ];
 
 export const founderMessageParagraphs = [
-  "BTA GlobalX began as a spark of an idea fueled by late nights, deep conversations, and a desire to build more than a network: a purpose-driven ecosystem where people, passion, and impact align.",
-  "Supporting entrepreneurs across Asia, the Middle East, and Europe, I witnessed firsthand how powerful transformation happens when driven individuals unite with purpose. That is how BTA GlobalX was born: a platform where your network becomes your catalyst for change.",
-  "Since then, we have grown not just in size, but in intention and impact. We have built trusted relationships, fostered meaningful partnerships, and cultivated a culture of Givers Get, where success is shared and purpose comes first.",
-  "To my team, the quiet warriors behind the scenes, the dreamers who dared, and the doers who delivered: you are the soul of BTA GlobalX. To every partner who trusted us and every member who showed up with open minds and open hearts, thank you for believing in this vision.",
-  "The future holds deeper learning, stronger alliances, and bold innovation. We are not just building a brand. We are shaping a legacy of excellence with impact.",
-  `Join us on ${eventDetails.date} at ${eventDetails.venue} for an inspiring and memorable day of networking, recognition, wellness, cultural celebration, and meaningful connection as we celebrate the Excellence Awards.`
+  "BTA GlobalX was built from a simple belief: meaningful success becomes stronger when people meet with purpose, generosity, and the courage to support one another.",
+  "Across our journey, we have seen entrepreneurs, wellness leaders, artists, partners, and changemakers grow faster when they are welcomed into the right circle of trust and opportunity.",
+  "This anniversary is our invitation to celebrate that circle. It brings together collaboration, culture, recognition, and the people who continue to turn vision into impact.",
+  `On ${eventDetails.date}, we gather at ${eventDetails.venue} to honour excellence, welcome new partnerships, and create a memory worthy of the community behind it.`
 ];
 
 export const packageTierIcons: Record<string, LucideIcon> = {
@@ -93,12 +91,12 @@ export const highlightLanes: HighlightLane[] = [
     ids: ["bazaar", "art"]
   },
   {
-    title: "Be Seen",
+    title: "Visibility",
     copy: "Magazine launch, strategic alliance, red carpet, interviews, and media exposure.",
     ids: ["magazine", "alliance", "red-carpet"]
   },
   {
-    title: "Celebrate",
+    title: "Awards Night",
     copy: "Culture, fashion, gala dinner, awards, lucky draw, ceremony, and gallery.",
     ids: ["culture", "fashion", "dinner", "awards", "lucky-draw", "anniversary", "gallery"]
   }
@@ -119,24 +117,24 @@ export const scenarioScenes: ScenarioScene[] = [
   {
     accent: "#fdd142",
     anchorId: "program-map",
-    body: "The day is mapped as a sequence of scenes: guests learn, explore, become visible, and then celebrate. Every highlight has a role in the larger gala journey.",
+    body: "The day is designed as a clear event route: guests arrive, learn, discover, become visible, and then celebrate inside one connected experience.",
     detailCards: highlightLanes.map((lane) => ({
       body: lane.copy,
       label: `${lane.ids.length} signals`,
       title: lane.title
     })),
-    eyebrow: "Act 01",
+    eyebrow: "Programme map",
     highlights: highlights.map((highlight) => highlight.id),
     icon: Sparkles,
     id: "map",
-    image: galleryImages[0].src,
-    title: "What happens here",
+    image: sceneAssets.venue.src,
+    title: "Why the day matters",
     tone: "map"
   },
   {
-    accent: "#46d8ff",
+    accent: "#0f7c63",
     anchorId: "forum",
-    body: "The first deep act opens with Life Management and Mental Well-being Forum 2026, led by Prof. Dr. Mike Chan and an expert panel exploring practical balance, beauty, wellness, youth science, mental health, yoga, and integrated living.",
+    body: "The forum opens the day with practical leadership around life management, mental well-being, beauty, regenerative science, yoga, and integrated living.",
     detailCards: [
       {
         body: `${speakers[0]?.name ?? "Prof. Dr. Mike Chan"} anchors the keynote and moderates the panel discussion.`,
@@ -157,18 +155,18 @@ export const scenarioScenes: ScenarioScene[] = [
         title: "Mind and life prompts"
       }
     ],
-    eyebrow: "Act 02",
+    eyebrow: "Forum",
     highlights: ["forum", "speakers"],
     icon: Mic2,
     id: "mind-life",
     image: sceneAssets.forum.src,
-    title: "Mind & Life Lab",
+    title: "Mind & Life Forum",
     tone: "blue"
   },
   {
     accent: "#ffca3a",
     anchorId: "creative-market",
-    body: "The venue shifts into a high-impact gallery and market floor, connecting sustainable creative art, wellness products, artist visibility, entrepreneurship, and global responsibility.",
+    body: "The venue shifts into a curated discovery floor where wellness products, sustainable creative art, and purposeful entrepreneurship become visible.",
     detailCards: [
       {
         body: "Curated artist spotlights and sustainability recognition give underrepresented creators a proper global stage.",
@@ -181,23 +179,23 @@ export const scenarioScenes: ScenarioScene[] = [
         title: "Wellness fair"
       },
       {
-        body: "Physical and digital visibility extend the work beyond the room and into a wider network.",
+        body: "Physical and digital visibility extend the work beyond the event and into a wider network.",
         label: "Hybrid",
         title: "Networking hub"
       }
     ],
-    eyebrow: "Act 03",
+    eyebrow: "Wellness Market",
     highlights: ["bazaar", "art"],
     icon: Palette,
     id: "creative-market",
     image: sceneAssets.market.src,
-    title: "Creative Market",
+    title: "Curated Discovery",
     tone: "market"
   },
   {
-    accent: "#ff4ea3",
+    accent: "#7c1428",
     anchorId: "premiere",
-    body: "The Tycoon Global Magazine Special Edition featuring BTA GlobalX becomes the editorial reveal: cover unveiling, editor speech, media networking, flash-mob energy, and strategic alliance visibility.",
+    body: "The media premiere gives the event a shareable centrepiece: editorial visibility, partner recognition, flash moments, and strategic alliance energy.",
     detailCards: [
       {
         body: "The Grand Reveal and Cover Unveiling create a media-led center point for the event.",
@@ -215,22 +213,22 @@ export const scenarioScenes: ScenarioScene[] = [
         title: "Flash-mob network"
       }
     ],
-    eyebrow: "Act 04",
+    eyebrow: "Media Premiere",
     highlights: ["magazine", "alliance"],
     icon: BookOpen,
     id: "premiere",
     image: sceneAssets.media.src,
-    title: "THE PREMIERE",
+    title: "The Premiere",
     tone: "red"
   },
   {
     accent: "#fdd142",
     anchorAliases: ["gala-awards"],
     anchorId: "red-carpet-runway",
-    body: "The finale rolls through red carpet interviews, Southeast Asian music and dance, contemporary heritage fashion, gala dinner, awards, lucky draw, and the closing photo session.",
+    body: "The evening moves through red carpet interviews, cultural performance, heritage fashion, gala dinner, awards, lucky draw, and the closing photo session.",
     detailCards: [
       {
-        body: "Arrival energy, media bites, and flash moments set up visible recognition before the room moves inward.",
+        body: "Arrival energy, media bites, and flash moments set up visible recognition before the gala begins.",
         label: "Arrival",
         title: "Red carpet"
       },
@@ -245,12 +243,12 @@ export const scenarioScenes: ScenarioScene[] = [
         title: "Awards stage"
       }
     ],
-    eyebrow: "Act 05",
+    eyebrow: "Gala Route",
     highlights: ["red-carpet", "culture", "fashion", "dinner", "awards", "lucky-draw"],
     icon: Trophy,
     id: "red-carpet-gala",
     image: sceneAssets.gala.src,
-    title: "Red Carpet to Gala",
+    title: "Red Carpet to Awards",
     tone: "runway"
   }
 ];
@@ -277,15 +275,15 @@ export const galleryTiles = [
 export const registrationSlides = [
   {
     id: "general",
-    eyebrow: "Slide 01",
-    title: "General",
+    eyebrow: "Guest Access",
+    title: "Guest Passes",
     summary: "Entry and table access for guests joining the full event journey.",
     packages: registrationPackages.filter((pkg) => ["general", "signature"].includes(pkg.id))
   },
   {
     id: "nominee",
-    eyebrow: "Slide 02",
-    title: "Nominee",
+    eyebrow: "Recognition Access",
+    title: "Nominee Packages",
     summary: "Award nominee packages with profile, media, and recognition benefits.",
     packages: registrationPackages.filter((pkg) => ["silver", "gold", "platinum"].includes(pkg.id))
   }

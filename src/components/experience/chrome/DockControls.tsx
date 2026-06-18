@@ -3,35 +3,28 @@ import { SafeIcon } from "../ui/SafeIcon";
 export function DockControls() {
   return (
     <div className="dock-controls">
-      <div className="dock-capsule dock-capsule-social">
-        <span>Contact</span>
-        <div className="dock-reveal" aria-label="Social links">
-          {socialLinks.map((item) => {
-            const Icon = item.icon;
-            return (
-              <a href={item.href} key={item.label} aria-label={item.label}>
-                <SafeIcon aria-hidden="true" icon={Icon} />
-              </a>
-            );
-          })}
-        </div>
-      </div>
-
       <div className="dock-nav" aria-label="Page sections">
-        {navItems.map((item) => (
+        {navItems.map((item, index) => (
           <a href={item.href} key={item.href}>
-            {item.label}
+            <span>{String(index + 1).padStart(2, "0")}</span>
+            <strong>{item.label}</strong>
           </a>
         ))}
       </div>
 
-      <div className="dock-capsule dock-capsule-contact">
-        <div className="dock-reveal" aria-label="Contact links">
-          <a href={whatsappLink} aria-label="WhatsApp">
-            <span aria-hidden="true">WA</span>
-          </a>
-        </div>
-        <span>Get In touch</span>
+      <div className="dock-contact-cluster" aria-label="Contact links">
+        {socialLinks.map((item) => {
+          const Icon = item.icon;
+          return (
+            <a href={item.href} key={item.label} aria-label={item.label}>
+              <SafeIcon aria-hidden="true" icon={Icon} />
+            </a>
+          );
+        })}
+        <a className="dock-register" href={whatsappLink}>
+          <span>Reserve</span>
+          <strong>Seat</strong>
+        </a>
       </div>
     </div>
   );

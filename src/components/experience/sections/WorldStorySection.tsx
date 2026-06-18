@@ -103,7 +103,7 @@ function SpeakerFocus({ activeSpeaker }: { activeSpeaker: number }) {
       <span>{speaker.number}</span>
       <strong>{speaker.name}</strong>
       <p>{speaker.topic}</p>
-      <small>{speaker.source === "official" ? "Official portrait in scene" : "Portrait slot awaiting official image"}</small>
+      <small>{speaker.source === "official" ? "Official portrait in scene" : `Photo will be added: ${speaker.name}`}</small>
     </div>
   );
 }

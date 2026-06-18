@@ -18,7 +18,7 @@ export const worldScenes: WorldScene[] = [
     accent: "#fdd142",
     anchorId: "world-arrival",
     camera: { position: [0, 2.2, 9.8], target: [0, 0.75, -2.2] },
-    copy: "The anniversary opens as a venue path, not a page stack: every scroll movement shifts the room, the lights, and the next thing the guest discovers.",
+    copy: "The anniversary opens as a venue path, not a page stack: every scroll movement shifts the lights, the stage, and the next thing the guest discovers.",
     environment: "arrival",
     hotspots: [
       { label: "Arrival", position: [-2.8, 0.12, -1.3] },
@@ -31,7 +31,7 @@ export const worldScenes: WorldScene[] = [
     title: "A living anniversary stage"
   },
   {
-    accent: "#46d8ff",
+    accent: "#0f7c63",
     anchorId: "world-founder",
     actors: [
       {
@@ -43,7 +43,7 @@ export const worldScenes: WorldScene[] = [
       }
     ],
     camera: { position: [-5.4, 2.6, 5.8], target: [-1.6, 1.05, -2.6] },
-    copy: "The founder chamber pulls the portrait into the room while the message arrives in fragments, like a stage speech moving toward the audience.",
+    copy: "The founder message arrives like a warm stage address, bringing the portrait, purpose, and invitation closer to the audience.",
     environment: "founder",
     id: "founder-chamber",
     image: founderAssets.sangeetaBiswas.src,
@@ -51,7 +51,7 @@ export const worldScenes: WorldScene[] = [
     title: "Legacy begins as a voice"
   },
   {
-    accent: "#ff4ea3",
+    accent: "#7c1428",
     anchorId: "world-journey",
     actors: sponsorAssets.slice(0, 8).map((sponsor, index) => ({
       id: `sponsor-${sponsor.id}`,
@@ -61,7 +61,7 @@ export const worldScenes: WorldScene[] = [
       role: "sponsor" as const
     })),
     camera: { position: [-6.2, 2.1, 3.5], target: [2.1, 0.72, -5.8] },
-    copy: "The camera arcs through sponsor billboards, forum cues, market lights, media walls, runway lines, and the gala hall instead of dropping down a ladder of cards.",
+    copy: "The camera arcs through sponsor logos, forum cues, market lights, media moments, runway lines, and the gala hall instead of dropping down a ladder of cards.",
     environment: "journey",
     hotspots: journeyActs.slice(2, 8).map((act, index) => ({
       label: act.title,
@@ -73,7 +73,7 @@ export const worldScenes: WorldScene[] = [
     title: "Move through the venue"
   },
   {
-    accent: "#b7f2d0",
+    accent: "#0f7c63",
     anchorId: "world-forum",
     actors: speakerScenes.map((speaker, index) => ({
       id: `speaker-${speaker.name.toLowerCase().replaceAll(" ", "-")}`,
@@ -91,7 +91,7 @@ export const worldScenes: WorldScene[] = [
     title: "Seven voices, one moving forum"
   },
   {
-    accent: "#f6d7a7",
+    accent: "#c69b2a",
     anchorId: "world-timeline",
     camera: { position: [5.7, 2.0, -0.8], target: [-2.6, 0.7, -5.2] },
     copy: "The day schedule becomes a glowing floor path with stops for forum, bazaar, media reveal, cultural stage, gala dinner, awards, and closing photography.",
@@ -117,10 +117,10 @@ export const worldScenes: WorldScene[] = [
     title: "Choose your access pass"
   },
   {
-    accent: "#46d8ff",
+    accent: "#7c1428",
     anchorId: "world-finale",
     camera: { position: [-3.2, 2.4, -6.4], target: [2.4, 0.85, -2.2] },
-    copy: "Awards, gallery, venue, partners, and FAQ compress into a closing environment: less scroll, more final-room memory.",
+    copy: "Awards, gallery, venue, partners, and FAQ close the experience with less clutter and a stronger final memory.",
     environment: "finale",
     id: "finale-gallery",
     image: sceneAssets.finale.src,
@@ -150,7 +150,7 @@ export const scrollChapters: ScrollChapter[] = [
     anchorId: worldScenes[2].anchorId,
     copy: worldScenes[2].copy,
     id: worldScenes[2].id,
-    meta: "Environment 03 / 235 degree venue arc",
+    meta: "Environment 03 / Venue arc",
     number: "03",
     title: worldScenes[2].title
   },
@@ -186,7 +186,7 @@ export const scrollChapters: ScrollChapter[] = [
     ctaHref: "#location",
     ctaLabel: "View venue",
     id: worldScenes[6].id,
-    meta: "Environment 07 / Closing room",
+    meta: "Environment 07 / Closing memory",
     number: "07",
     title: worldScenes[6].title
   }

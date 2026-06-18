@@ -8,6 +8,7 @@ import {
   Color,
   DoubleSide,
   MathUtils,
+  setConsoleFunction,
   TextureLoader,
   Vector3
 } from "three";
@@ -25,6 +26,14 @@ const tmpPosition = new Vector3();
 const tmpTarget = new Vector3();
 const tmpColor = new Color();
 const sceneColor = new Color();
+
+setConsoleFunction((type: "error" | "log" | "warn", message: unknown, ...params: unknown[]) => {
+  if (type === "warn" && String(message).includes("Clock: This module has been deprecated")) {
+    return;
+  }
+  const method = type === "error" ? console.error : type === "warn" ? console.warn : console.log;
+  method(message, ...params);
+});
 
 type WorldNodeRef = {
   children: Array<{ position: { x: number; y: number; z: number } }>;

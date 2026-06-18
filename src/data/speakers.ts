@@ -48,28 +48,47 @@ export const speakers: Speaker[] = [
 ];
 
 export const panelTopics = [
-  "Mastering Life Through Shindo: a holistic approach to personal balance and purpose.",
-  "Ayurveda & Inner Radiance: beauty, wellness, and emotional balance.",
-  "The Science of Youth: stem cells for cognitive vitality and aesthetic longevity.",
-  "Breaking the Silence: mental health awareness, challenges, and solutions.",
-  "Mind Over Matter: yoga and meditation in mental wellness.",
-  "Embracing Holistic Wellness in Modern Lifestyle: self-discovery, simplicity, sustainable well-being, fitness, immunity, and digital detox.",
+  "Mastering Life Through Shindo: practical balance, clarity, and purpose for modern leaders.",
+  "Ayurveda & Inner Radiance: beauty, wellness, and emotional steadiness as daily practice.",
+  "The Science of Youth: cognitive vitality, regenerative insight, and aesthetic longevity.",
+  "Breaking the Silence: mental health awareness, honest challenges, and workable solutions.",
+  "Mind Over Matter: yoga, meditation, and discipline as tools for mental wellness.",
+  "Modern Holistic Living: simplicity, fitness, immunity, and digital detox for sustainable energy.",
   "Integrated Living: traditional wisdom and modern science for a healthier mind and life."
 ];
 
-export const speakerScenes = speakers.map((speaker, index) => ({
-  ...speaker,
-  accent: ["#fdd142", "#46d8ff", "#ff4ea3", "#f6d7a7", "#dce9f6", "#b7f2d0", "#fdd142"][index],
-  number: String(index + 1).padStart(2, "0"),
-  sceneImage: [
-    sceneAssets.forum.src,
-    sceneAssets.access.src,
-    sceneAssets.gala.src,
-    sceneAssets.market.src,
-    sceneAssets.venue.src,
-    sceneAssets.runway.src,
-    sceneAssets.finale.src
-  ][index],
-  source: speaker.image ? "official" : "temporary-slot",
-  topic: panelTopics[index]
-}));
+const speakerAccents = ["#fdd142", "#8f1d2c", "#0f7c63", "#b9822c", "#f5f0e6", "#7c2336", "#d7b46a"];
+
+const speakerSceneImages = [
+  sceneAssets.forum.src,
+  sceneAssets.venue.src,
+  sceneAssets.gala.src,
+  sceneAssets.market.src,
+  sceneAssets.venue.src,
+  sceneAssets.runway.src,
+  sceneAssets.media.src
+];
+
+export const speakerScenes = speakers.map((speaker, index) => {
+  const hasPortrait = Boolean(speaker.image);
+
+  return {
+    ...speaker,
+    accent: speakerAccents[index] ?? "#fdd142",
+    number: String(index + 1).padStart(2, "0"),
+    portraitStatus: hasPortrait ? "official" : "pending",
+    portraitNote: hasPortrait ? "Official portrait loaded" : `Photo will be added: ${speaker.name}`,
+    sceneImage: speakerSceneImages[index] ?? sceneAssets.venue.src,
+    source: hasPortrait ? "official" : "temporary-slot",
+    topic: panelTopics[index],
+    vibe: [
+      "Keynote direction",
+      "Wellness science",
+      "Global wellbeing",
+      "Beauty and balance",
+      "Professional growth",
+      "Purpose discipline",
+      "Emotional health"
+    ][index]
+  };
+});

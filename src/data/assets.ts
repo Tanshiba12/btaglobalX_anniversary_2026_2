@@ -39,15 +39,66 @@ export const heroAssets = {
 } as const satisfies Record<string, VideoAsset>;
 
 export const sponsorAssets: readonly SponsorAsset[] = [
-  { id: "ayu-herba", name: "Ayu Herba", src: "/assets/partners/ayuherba logo.jpeg" },
-  { id: "bta-productions", name: "BTA Productions", src: "/assets/partners/BTA PRODUCTION.jpg" },
-  { id: "btv-international", name: "BTV International", src: "/assets/partners/BTV.jpeg" },
+  { id: "ayu-herba", name: "Ayu Herba", src: "/assets/partners/Ayu-Herba-logo-1160x400-1.png" },
+  { id: "bta-globalx", name: "BTA GlobalX", src: "/assets/partners/BTA GLOBAL X.png" },
+  { id: "bta-productions", name: "BTA Productions", src: "/assets/partners/BTA PRODUCTION_bgr.jpg.png" },
+  { id: "btv-international", name: "BTV International", src: "/assets/partners/BTV International.png" },
   { id: "european-wellness", name: "European Wellness", src: "/assets/partners/european wellness.webp" },
   { id: "iseigur", name: "ISEIGUR", src: "/assets/partners/ISEIGUR logo.png" },
-  { id: "tycoon-global", name: "Tycoon Global", src: "/assets/partners/TYCOON GLOBAL.jpg" },
-  { id: "shindo", name: "Shindo", src: "/assets/partners/SHINDO.jpg" },
-  { id: "bta-globalx", name: "BTA GlobalX", src: "/assets/partners/bta globalx logo.jpg" }
+  { id: "shindo", name: "Shindo", src: "/assets/partners/shindo.png" },
+  { id: "tycoon-global", name: "Tycoon Global", src: "/assets/partners/Tycoon.png" }
 ] as const satisfies readonly SponsorAsset[];
+
+export const generatedAssets = {
+  overviewStageOrbit: {
+    alt: "Cinematic black and gold gala stage with orbit-like stage architecture",
+    id: "overview-stage-orbit",
+    source: "official",
+    src: "/assets/generated/overview-stage-orbit.png"
+  },
+  journeyArrivalRegistration: {
+    alt: "Luxury event arrival and registration foyer with golden ballroom entrance",
+    id: "journey-arrival-registration",
+    source: "official",
+    src: "/assets/generated/journey-arrival-registration.png"
+  },
+  journeyLifeManagementForum: {
+    alt: "Premium life management forum stage with panel seating and warm gold lighting",
+    id: "journey-life-management-forum",
+    source: "official",
+    src: "/assets/generated/journey-life-management-forum.png"
+  },
+  journeyWellnessMarket: {
+    alt: "Luxury wellness market and creative exhibition corridor inside a hotel ballroom",
+    id: "journey-wellness-market",
+    source: "official",
+    src: "/assets/generated/journey-wellness-market.png"
+  },
+  journeyMediaPremiere: {
+    alt: "Premium media premiere reveal stage with red carpet and camera flashes",
+    id: "journey-media-premiere",
+    source: "official",
+    src: "/assets/generated/journey-media-premiere.png"
+  },
+  journeyRedCarpetRunway: {
+    alt: "Elegant red carpet and heritage runway stage with gold lights and maroon curtains",
+    id: "journey-red-carpet-runway",
+    source: "official",
+    src: "/assets/generated/journey-red-carpet-runway.png"
+  },
+  journeyGalaAwards: {
+    alt: "Prestigious gala awards ballroom stage with black, gold, and maroon lighting",
+    id: "journey-gala-awards",
+    source: "official",
+    src: "/assets/generated/journey-gala-awards.png"
+  },
+  forumAmbientWellnessScenes: {
+    alt: "Abstract premium wellness forum stage with gold, maroon, and emerald lighting",
+    id: "forum-ambient-wellness-scenes",
+    source: "official",
+    src: "/assets/generated/forum-ambient-wellness-scenes.png"
+  }
+} as const satisfies Record<string, ImageAsset>;
 
 export const founderAssets = {
   sangeetaBiswas: {
@@ -112,10 +163,10 @@ export const galleryAssets = {
 
 export const sceneAssets = {
   arrival: {
-    alt: "BTA GlobalX ceremony atmosphere with guests and stage lighting",
+    alt: "Hotel Sheraton Johor Bahru event arrival setting",
     id: "scene-arrival",
     source: "official",
-    src: galleryAssets.previousEvents[0].src
+    src: brandAssets.venue.src
   },
   venue: {
     alt: "Hotel Sheraton Johor Bahru venue exterior",
@@ -124,16 +175,16 @@ export const sceneAssets = {
     src: brandAssets.venue.src
   },
   forum: {
-    alt: "BTA GlobalX speaker and audience moment",
+    alt: "BTA GlobalX community and networking moment",
     id: "scene-forum",
     source: "official",
     src: galleryAssets.previousEvents[3].src
   },
   market: {
-    alt: "BTA GlobalX networking and exhibition atmosphere",
+    alt: "BTA GlobalX gala performance and exhibition atmosphere",
     id: "scene-market",
     source: "official",
-    src: galleryAssets.previousEvents[1].src
+    src: galleryAssets.previousEvents[2].src
   },
   media: {
     alt: "BTA GlobalX red carpet and media moment",
@@ -142,25 +193,25 @@ export const sceneAssets = {
     src: galleryAssets.previousEvents[1].src
   },
   runway: {
-    alt: "BTA GlobalX performance and fashion stage moment",
+    alt: "BTA GlobalX cultural stage and performance moment",
     id: "scene-runway",
     source: "official",
     src: galleryAssets.previousEvents[2].src
   },
   gala: {
-    alt: "BTA GlobalX awards stage and gala moment",
+    alt: "BTA GlobalX awards ceremony moment",
     id: "scene-gala",
     source: "official",
     src: galleryAssets.previousEvents[0].src
   },
   access: {
-    alt: "BTA GlobalX venue arrival and schedule setting",
+    alt: "Hotel Sheraton Johor Bahru guest arrival setting",
     id: "scene-access",
     source: "official",
     src: brandAssets.venue.src
   },
   finale: {
-    alt: "BTA GlobalX celebration finale and networking moment",
+    alt: "BTA GlobalX closing celebration and gala performance",
     id: "scene-finale",
     source: "official",
     src: galleryAssets.previousEvents[2].src
