@@ -12,7 +12,7 @@ export function PartnersSection() {
         <div className="partner-logo-wall" data-stagger aria-label="Official sponsor and partner logos">
           {sponsorAssets.map((partner) => (
             <article data-stagger-item key={partner.id}>
-              <Image alt={`${partner.name} logo`} height={96} src={partner.src} unoptimized width={220} />
+              <Image alt={`${partner.name} logo`} height={96} loading="eager" src={partner.src} unoptimized width={220} />
               <strong>{partner.name}</strong>
             </article>
           ))}

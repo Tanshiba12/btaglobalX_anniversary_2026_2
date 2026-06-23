@@ -102,10 +102,10 @@ export function useExperienceMotion({
 
         gsap.fromTo(
           ".sticky-header-logo",
-          { scale: 1.34, y: 18 },
+          { scale: 1.16, y: 4 },
           {
-            scale: 0.74,
-            y: -10,
+            scale: 0.78,
+            y: -8,
             ease: "none",
             scrollTrigger: {
               trigger: ".hero-section",

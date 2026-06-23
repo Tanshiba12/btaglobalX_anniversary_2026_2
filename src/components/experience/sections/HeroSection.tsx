@@ -27,6 +27,9 @@ export function HeroSection({
       </div>
       <div className="hero-scrim" />
       <div className="hero-light-beam" aria-hidden="true" />
+      <div className="hero-star-field hero-star-field-one" aria-hidden="true" />
+      <div className="hero-star-field hero-star-field-two" aria-hidden="true" />
+      <div className="hero-star-stream" aria-hidden="true" />
 
       <div className="hero-content">
         <div className="hero-event-lockup">
@@ -98,7 +101,15 @@ export function HeroSection({
                   style={{ "--sponsor-index": index } as CSSProperties}
                   tabIndex={0}
                 >
-                  <Image alt={`${logo.name} logo`} height={86} priority src={logo.src} unoptimized width={220} />
+                  <Image
+                    alt={`${logo.name} logo`}
+                    fetchPriority={index === 0 ? "high" : "auto"}
+                    height={86}
+                    loading={index < 3 ? "eager" : "lazy"}
+                    src={logo.src}
+                    unoptimized
+                    width={220}
+                  />
                   <span className="hero-sponsor-fallback">{logo.name}</span>
                 </span>
               ))}

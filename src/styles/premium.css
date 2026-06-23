@@ -1833,13 +1833,590 @@ body,
   }
 }
 
+/* Hero reset: open cinematic stage, star flow, floating timer, unboxed partners. */
+.sticky-header {
+  z-index: 80;
+}
+
+.sticky-header-logo {
+  width: 6.15rem;
+  padding: 0.34rem;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(255, 255, 255, 0.18), transparent 62%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.03));
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow:
+    0 1rem 3rem rgba(0, 0, 0, 0.34),
+    0 0 3rem rgba(244, 200, 76, 0.16);
+  backdrop-filter: blur(16px);
+}
+
+.hero-section {
+  align-items: stretch;
+  min-height: 100svh;
+  padding: 0;
+  background:
+    radial-gradient(ellipse at 50% 20%, rgba(244, 200, 76, 0.16), transparent 32rem),
+    linear-gradient(180deg, #050509 0%, #09090e 100%);
+}
+
+.hero-section::before {
+  z-index: 1;
+  background:
+    radial-gradient(ellipse at 72% 34%, rgba(244, 200, 76, 0.2), transparent 27rem),
+    linear-gradient(90deg, rgba(5, 5, 9, 0.94), rgba(5, 5, 9, 0.5) 46%, rgba(5, 5, 9, 0.88)),
+    linear-gradient(180deg, rgba(5, 5, 9, 0.18), rgba(5, 5, 9, 0.72));
+}
+
+.hero-media video {
+  opacity: 0.5;
+  filter: saturate(0.95) contrast(1.18) brightness(0.78);
+}
+
+.hero-venue-image {
+  opacity: 0.34;
+  filter: saturate(0.86) contrast(1.1) brightness(0.65);
+  mix-blend-mode: screen;
+}
+
+.hero-scrim {
+  background:
+    linear-gradient(180deg, rgba(5, 5, 9, 0.08), rgba(5, 5, 9, 0.5) 58%, rgba(5, 5, 9, 0.9)),
+    radial-gradient(ellipse at 50% 42%, transparent 0 24rem, rgba(5, 5, 9, 0.58) 55rem);
+}
+
+.hero-light-beam {
+  left: 58%;
+  width: 22rem;
+  opacity: 0.42;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.24), transparent 74%);
+}
+
+.hero-star-field,
+.hero-star-stream {
+  position: absolute;
+  inset: -12%;
+  z-index: 2;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+.hero-star-field {
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.72) 0 1px, transparent 1.6px),
+    radial-gradient(circle, rgba(244, 200, 76, 0.72) 0 1.2px, transparent 1.9px);
+  background-position: 0 0, 6rem 4rem;
+  opacity: 0.34;
+  animation: hero-star-flow 32s linear infinite;
+}
+
+.hero-star-field-two {
+  background-size: 19rem 14rem, 27rem 19rem;
+  opacity: 0.2;
+  transform: rotate(-8deg);
+  animation-duration: 46s;
+  animation-direction: reverse;
+}
+
+.hero-star-stream {
+  background:
+    repeating-linear-gradient(
+      118deg,
+      transparent 0 5.4rem,
+      rgba(255, 255, 255, 0.14) 5.46rem,
+      transparent 5.62rem
+    );
+  opacity: 0.18;
+  filter: blur(0.5px);
+  transform: translate3d(-10%, 0, 0) rotate(-5deg);
+  animation: hero-star-stream 13s linear infinite;
+}
+
+.hero-content {
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "lockup"
+    "meta"
+    "sponsors";
+  align-content: center;
+  justify-items: center;
+  gap: clamp(1rem, 2.2svh, 1.6rem);
+  width: min(90rem, 100%);
+  min-height: 100svh;
+  padding: clamp(8.2rem, 13.5svh, 9.8rem) clamp(1.2rem, 5vw, 5rem) clamp(9.6rem, 17svh, 12rem);
+  text-align: center;
+}
+
+.hero-event-lockup {
+  display: grid;
+  justify-items: center;
+  max-width: min(75rem, 100%);
+  margin-top: clamp(3.6rem, 7svh, 4.6rem);
+  padding-top: 0;
+  transform: none;
+}
+
+.hero-presents {
+  margin: 0 0 clamp(0.85rem, 1.6svh, 1.25rem);
+  color: rgba(244, 200, 76, 0.95);
+  font-size: clamp(0.86rem, 1.15vw, 1.15rem);
+  letter-spacing: 0.04em;
+}
+
+.hero-content h1 {
+  max-width: min(72rem, 100%);
+  margin-inline: auto;
+  font-size: clamp(4.8rem, 7.6vw, 7.35rem);
+  line-height: 0.9;
+  text-align: center;
+  text-transform: uppercase;
+  filter: drop-shadow(0 1.3rem 2.4rem rgba(0, 0, 0, 0.55));
+}
+
+.hero-title-main {
+  max-width: 100%;
+}
+
+.hero-title-awards {
+  margin-top: clamp(0.55rem, 1.2svh, 0.9rem);
+  font-size: clamp(2.15rem, 4.2vw, 4rem);
+  font-weight: 600;
+}
+
+.hero-tagline {
+  max-width: min(42rem, 100%);
+  margin-inline: auto;
+  font-size: clamp(1rem, 1.45vw, 1.28rem);
+  line-height: 1.45;
+}
+
+.hero-event-meta {
+  justify-items: center;
+  max-width: 72rem;
+  transform: none;
+}
+
+.hero-meta-row {
+  justify-content: center;
+}
+
+.hero-meta-row span,
+.hero-meta-location {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 1rem 2.4rem rgba(0, 0, 0, 0.18);
+}
+
+.hero-countdown-card {
+  position: absolute;
+  top: clamp(7.5rem, 15svh, 9.6rem);
+  left: clamp(-0.65rem, 0.55vw, 0.55rem);
+  z-index: 5;
+  width: clamp(12.6rem, 16.8vw, 15.8rem);
+  min-height: clamp(13.2rem, 17vw, 15.8rem);
+  padding: 0;
+  overflow: visible;
+  background: transparent;
+  border: 0;
+  border-radius: 50% !important;
+  box-shadow: none;
+  cursor: pointer;
+  transform-style: preserve-3d;
+}
+
+.hero-countdown-card::before,
+.hero-countdown-card::after {
+  position: absolute;
+  inset: 10%;
+  content: "";
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero-countdown-card::before {
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.18), transparent 31%),
+    conic-gradient(from 90deg, rgba(244, 200, 76, 0.04), rgba(244, 200, 76, 0.5), rgba(20, 108, 92, 0.28), rgba(244, 200, 76, 0.04));
+  filter: blur(1px);
+  transform: rotateX(64deg) rotateZ(-14deg);
+  animation: countdown-orbit-float 6s ease-in-out infinite;
+}
+
+.hero-countdown-card::after {
+  inset: 28%;
+  background: radial-gradient(circle, rgba(244, 200, 76, 0.34), transparent 68%);
+  filter: blur(10px);
+  opacity: 0.72;
+  animation: countdown-pulse 2.8s ease-in-out infinite;
+}
+
+.hero-countdown-card:hover,
+.hero-countdown-card:focus-within {
+  border-color: transparent;
+  transform: translateY(-0.35rem) rotateX(0deg) rotateY(0deg);
+}
+
+.hero-timepiece {
+  width: min(100%, 14.8rem);
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.94) 0 9%, rgba(244, 200, 76, 0.2) 9.4% 19%, transparent 20%),
+    radial-gradient(circle, rgba(255, 255, 255, 0.12), transparent 66%);
+  transform: rotateX(63deg) rotateZ(-16deg);
+}
+
+.hero-timepiece-core {
+  width: 5.35rem;
+  height: 5.35rem;
+  font-size: 0.6rem;
+  box-shadow:
+    0 0 0 0.45rem rgba(255, 255, 255, 0.12),
+    0 1.4rem 3rem rgba(0, 0, 0, 0.24);
+}
+
+.hero-countdown-units {
+  right: 0;
+  bottom: 0.15rem;
+  left: 0;
+  width: min(12.4rem, 88%);
+  margin-inline: auto;
+  gap: 0.45rem;
+}
+
+.hero-countdown-units span {
+  min-height: 3.25rem;
+  padding: 0.42rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.17), rgba(255, 255, 255, 0.05)),
+    rgba(6, 6, 10, 0.66);
+  border-color: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(14px);
+  transform: translateY(calc(var(--unit-index) * -0.12rem));
+}
+
+.hero-countdown-units strong {
+  font-size: clamp(1.45rem, 2.4vw, 2.15rem);
+}
+
+.hero-countdown-caption {
+  bottom: -1.65rem;
+  color: rgba(255, 255, 255, 0.76);
+  filter: drop-shadow(0 0.5rem 1.3rem rgba(0, 0, 0, 0.5));
+}
+
+.hero-sponsor-strip {
+  grid-template-columns: 1fr;
+  right: clamp(1rem, 5vw, 5rem) !important;
+  bottom: -1.25rem !important;
+  left: clamp(1rem, 5vw, 5rem) !important;
+  width: auto;
+  min-height: 8.1rem !important;
+  padding: 0;
+  overflow: visible !important;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  pointer-events: none;
+}
+
+.hero-sponsor-label {
+  position: absolute !important;
+  left: 50%;
+  top: 0.1rem;
+  max-width: none;
+  color: rgba(255, 255, 255, 0.74) !important;
+  font-size: 0.86rem;
+  transform: translateX(-50%) !important;
+  text-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.48);
+  white-space: nowrap;
+}
+
+.hero-sponsor-orbit {
+  height: 8.4rem;
+  overflow: visible;
+  perspective: 70rem;
+  pointer-events: auto;
+}
+
+.hero-sponsor-wheel {
+  inset: 0;
+  animation-duration: 34s;
+}
+
+.hero-sponsor-item {
+  width: clamp(8.4rem, 10.5vw, 10.6rem);
+  height: 4.6rem;
+  padding: 0.2rem;
+  background: transparent;
+  border: 0;
+  border-radius: 0 !important;
+  box-shadow: none;
+  filter:
+    drop-shadow(0 1rem 1.8rem rgba(0, 0, 0, 0.4))
+    drop-shadow(0 0 1.35rem rgba(255, 255, 255, 0.2));
+  transform: translate(-50%, -50%) rotateY(calc(var(--sponsor-index) * 45deg)) translateZ(clamp(12.4rem, 17vw, 18rem));
+}
+
+.hero-sponsor-item:hover,
+.hero-sponsor-item:focus-visible {
+  filter:
+    drop-shadow(0 1rem 1.8rem rgba(0, 0, 0, 0.42))
+    drop-shadow(0 0 1.8rem rgba(244, 200, 76, 0.45));
+}
+
+.hero-sponsor-item img {
+  max-height: 3.55rem;
+}
+
+.hero-sponsor-orbit-core {
+  display: none;
+}
+
+@keyframes hero-star-flow {
+  to {
+    background-position: 22rem 18rem, 32rem 24rem;
+  }
+}
+
+@keyframes hero-star-stream {
+  to {
+    transform: translate3d(11%, -7%, 0) rotate(-5deg);
+  }
+}
+
+@keyframes countdown-orbit-float {
+  0%,
+  100% {
+    transform: translateY(0) rotateX(64deg) rotateZ(-14deg);
+  }
+  50% {
+    transform: translateY(-0.5rem) rotateX(64deg) rotateZ(4deg);
+  }
+}
+
+@keyframes countdown-pulse {
+  0%,
+  100% {
+    opacity: 0.46;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 0.86;
+    transform: scale(1.08);
+  }
+}
+
+@media (max-width: 1180px) {
+  .hero-content {
+    grid-template-areas:
+      "lockup"
+      "timer"
+      "meta"
+      "sponsors";
+    gap: 1.05rem;
+    min-height: 100svh;
+    max-width: 54rem;
+    padding: 7.3rem 1.2rem 5.5rem;
+  }
+
+  .hero-event-lockup {
+    margin-top: 0;
+    transform: none;
+  }
+
+  .hero-meta-primary span {
+    font-size: 1.45rem;
+  }
+
+  .hero-meta-location {
+    font-size: 1.15rem;
+  }
+
+  .hero-meta-row svg,
+  .hero-meta-location svg {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(3.45rem, 7.8vw, 5.9rem);
+  }
+
+  .hero-title-awards {
+    font-size: clamp(1.8rem, 4vw, 3.05rem);
+  }
+
+  .hero-countdown-card {
+    position: relative;
+    top: auto;
+    left: auto;
+    grid-area: timer !important;
+    width: min(18rem, 82vw);
+    min-height: 15.6rem;
+    margin: 0.4rem auto 0;
+  }
+
+  .hero-timepiece {
+    width: 14.6rem;
+  }
+
+  .hero-sponsor-strip {
+    position: relative !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    width: min(100%, 42rem);
+    min-height: 8.6rem !important;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .sticky-header {
+    top: max(0.35rem, env(safe-area-inset-top));
+  }
+
+  .sticky-header-logo {
+    width: 5.2rem;
+    padding: 0.3rem;
+  }
+
+  .hero-section {
+    padding: 0;
+  }
+
+  .hero-content {
+    padding: 7rem 1rem 5.1rem;
+  }
+
+  .hero-countdown-card {
+    min-height: 13.8rem;
+  }
+
+  .hero-timepiece {
+    width: 12rem;
+  }
+
+  .hero-countdown-units {
+    bottom: 0.92rem;
+  }
+
+  .hero-sponsor-item {
+    width: 7.8rem;
+    height: 3.9rem;
+    transform: translate(-50%, -50%) rotateY(calc(var(--sponsor-index) * 45deg)) translateZ(11rem);
+  }
+}
+
+@media (max-width: 560px) {
+  .sticky-header {
+    top: max(0.18rem, env(safe-area-inset-top));
+  }
+
+  .sticky-header-logo {
+    width: 4.55rem;
+  }
+
+  .hero-content {
+    gap: 0.88rem;
+    padding: 6.35rem 1rem 4.7rem;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2.55rem, 11vw, 3.05rem);
+    line-height: 0.94;
+  }
+
+  .hero-title-awards {
+    font-size: clamp(1.35rem, 6.4vw, 1.72rem);
+  }
+
+  .hero-tagline {
+    font-size: 0.91rem;
+  }
+
+  .hero-countdown-card {
+    width: min(100%, 15.7rem);
+    min-height: 11.8rem;
+    margin-top: 0.05rem;
+  }
+
+  .hero-timepiece {
+    width: 9.3rem;
+  }
+
+  .hero-timepiece-core {
+    width: 3.82rem;
+    height: 3.82rem;
+    font-size: 0.48rem;
+  }
+
+  .hero-countdown-units {
+    bottom: 0.15rem;
+    width: min(12.8rem, 92%);
+  }
+
+  .hero-countdown-units span {
+    min-height: 2.58rem;
+  }
+
+  .hero-countdown-units strong {
+    font-size: 1rem;
+  }
+
+  .hero-meta-primary span,
+  .hero-meta-location {
+    min-height: 2.2rem;
+    padding: 0.46rem 0.6rem;
+    font-size: 0.74rem;
+  }
+
+  .hero-meta-row {
+    gap: 0.38rem;
+  }
+
+  .hero-meta-row svg,
+  .hero-meta-location svg {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  .hero-countdown-caption {
+    display: none;
+  }
+
+  .hero-sponsor-strip {
+    width: 100%;
+    min-height: 7.4rem !important;
+  }
+
+  .hero-sponsor-label {
+    font-size: 0.72rem;
+  }
+
+  .hero-sponsor-orbit {
+    height: 7.5rem;
+  }
+
+  .hero-sponsor-item {
+    width: 6.65rem;
+    height: 3.45rem;
+    transform: translate(-50%, -50%) rotateY(calc(var(--sponsor-index) * 45deg)) translateZ(8.8rem);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-light-beam,
   .hero-timepiece-ring,
   .hero-timepiece-hand,
   .hero-sponsor-wheel,
   .founder-light-ring,
-  .event-journey-liquid {
+  .event-journey-liquid,
+  .hero-star-field,
+  .hero-star-stream,
+  .hero-countdown-card::before,
+  .hero-countdown-card::after {
     animation: none !important;
   }
 }
