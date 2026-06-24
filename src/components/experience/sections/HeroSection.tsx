@@ -1,6 +1,6 @@
 import type { CSSProperties } from "react";
 import Image from "next/image";
-import { CalendarDays, Clock3, MapPin, MousePointer2, Sparkles } from "lucide-react";
+import { ArrowUpRight, CalendarDays, Clock3, MapPin } from "lucide-react";
 import { eventDetails } from "@/data";
 import { brandAssets, heroAssets, sponsorAssets } from "@/data/assets";
 import type { CountdownUnit } from "../hooks/useCountdown";
@@ -41,35 +41,26 @@ export function HeroSection({
             <span className="hero-title-line hero-title-awards">Excellence Award 2026</span>
           </h1>
           <p className="hero-tagline" data-hero-chip>
-            A joyful evening of wellness, culture, partnership, and recognition at Sheraton Johor Bahru.
+            Celebrating impact . honoring excellence . inspiring change
           </p>
         </div>
 
         <div className="hero-countdown-card" aria-label="Countdown to event" data-hero-chip>
-          <div className="hero-timepiece" aria-hidden="true">
-            <span className="hero-timepiece-ring hero-timepiece-ring-one" />
-            <span className="hero-timepiece-ring hero-timepiece-ring-two" />
-            <span className="hero-timepiece-ring hero-timepiece-ring-three" />
-            <span className="hero-timepiece-hand" />
-            <span className="hero-timepiece-core">
-              <SafeIcon aria-hidden="true" icon={Sparkles} />
-              Live countdown
-            </span>
+          <div className="hero-countdown-topline">
+            <strong>Opening in</strong>
+            <SafeIcon aria-hidden="true" icon={ArrowUpRight} />
           </div>
           <div className="hero-countdown-units">
             {countdown.map((unit, index) => (
-              <span
-                key={unit.label}
-                style={{ "--unit-index": index } as CSSProperties}
-              >
+              <span key={unit.label} style={{ "--unit-index": index } as CSSProperties}>
                 <strong>{unit.value}</strong>
-                <em>{unit.label === "Min" ? "Minutes" : unit.label}</em>
+                <em>{unit.label === "Min" ? "minutes" : unit.label.toLowerCase()}</em>
               </span>
             ))}
           </div>
-          <p className="hero-countdown-caption">
-            <SafeIcon aria-hidden="true" icon={MousePointer2} />
-            Touch the timer. The celebration is getting closer.
+          <p className="hero-countdown-place">
+            <span>{eventDetails.date}</span>
+            <span>Johor Bahru</span>
           </p>
         </div>
 
