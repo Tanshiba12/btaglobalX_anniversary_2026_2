@@ -13,21 +13,15 @@ type LenisConstructor = new (options: Record<string, unknown>) => LenisInstance;
 type UseExperienceMotionOptions = {
   reducedMotion: boolean;
   rootRef: RefObject<HTMLElement | null>;
-  setActiveSpeaker: (index: number) => void;
   setActiveTimeline: (index: number) => void;
-  setActiveWorldChapter: (index: number) => void;
   setWorldProgress: (progress: number) => void;
-  worldChapterCount: number;
 };
 
 export function useExperienceMotion({
   rootRef,
   reducedMotion,
-  setActiveSpeaker,
   setActiveTimeline,
-  setActiveWorldChapter,
-  setWorldProgress,
-  worldChapterCount
+  setWorldProgress
 }: UseExperienceMotionOptions) {
   useEffect(() => {
     if (!rootRef.current || reducedMotion) {
@@ -101,16 +95,17 @@ export function useExperienceMotion({
         );
 
         gsap.fromTo(
-          ".sticky-header-logo",
-          { scale: 1.16, y: 4 },
+          ".hero-brand-logo",
+          { scale: 1.14, y: 0 },
           {
-            scale: 0.78,
-            y: -8,
+            opacity: 0.92,
+            scale: 0.82,
+            y: -10,
             ease: "none",
             scrollTrigger: {
               trigger: ".hero-section",
               start: "top top",
-              end: "45% top",
+              end: "55% top",
               scrub: true
             }
           }
@@ -245,30 +240,15 @@ export function useExperienceMotion({
 
         const worldScroll = document.querySelector<HTMLElement>("[data-world-scroll]");
         if (worldScroll) {
-          let currentChapter = -1;
-          let currentSpeaker = -1;
-
           ScrollTrigger.create({
-            end: "bottom bottom",
+            end: () => `+=${Math.max(1, worldScroll.offsetHeight - window.innerHeight)}`,
             invalidateOnRefresh: true,
+            onRefresh: (self) => setWorldProgress(Math.min(1, Math.max(0, self.progress))),
             onUpdate: (self) => {
               const progress = Math.min(1, Math.max(0, self.progress));
-              const sceneFloat = progress * Math.max(1, worldChapterCount - 1);
-              const nextChapter = Math.min(worldChapterCount - 1, Math.round(sceneFloat));
-              const forumLocal = Math.min(1, Math.max(0, sceneFloat - 3));
-              const nextSpeaker = Math.min(6, Math.max(0, Math.floor(forumLocal * 7)));
-
               setWorldProgress(progress);
-              if (nextChapter !== currentChapter) {
-                currentChapter = nextChapter;
-                setActiveWorldChapter(nextChapter);
-              }
-              if (nextSpeaker !== currentSpeaker) {
-                currentSpeaker = nextSpeaker;
-                setActiveSpeaker(nextSpeaker);
-              }
             },
-            scrub: true,
+            scrub: 1.05,
             start: "top top",
             trigger: worldScroll
           });
@@ -403,13 +383,5 @@ export function useExperienceMotion({
       lenis?.destroy();
       window.cancelAnimationFrame(rafId);
     };
-  }, [
-    reducedMotion,
-    rootRef,
-    setActiveSpeaker,
-    setActiveTimeline,
-    setActiveWorldChapter,
-    setWorldProgress,
-    worldChapterCount
-  ]);
+  }, [reducedMotion, rootRef, setActiveTimeline, setWorldProgress]);
 }

@@ -33,6 +33,15 @@ export function HeroSection({
 
       <div className="hero-content">
         <div className="hero-event-lockup">
+          <div className="hero-brand-logo">
+            <Image
+              alt="BTA GlobalX"
+              height={112}
+              src={brandAssets.logo.src}
+              unoptimized
+              width={112}
+            />
+          </div>
           <p className="hero-presents" data-hero-chip>
             Presents
           </p>

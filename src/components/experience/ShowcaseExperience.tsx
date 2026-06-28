@@ -24,7 +24,6 @@ import { PartnersSection } from "./sections/PartnersSection";
 import { RegistrationSection } from "./sections/RegistrationSection";
 import { TimelineSection } from "./sections/TimelineSection";
 import { WorldStorySection } from "./sections/WorldStorySection";
-import { worldSceneCount } from "@/data";
 
 export function ShowcaseExperience() {
   const rootRef = useRef<HTMLElement | null>(null);
@@ -32,29 +31,22 @@ export function ShowcaseExperience() {
   const dockMode = useDockMode();
   const [activeTimeline, setActiveTimeline] = useState(0);
   const [worldProgress, setWorldProgress] = useState(0);
-  const [activeWorldChapter, setActiveWorldChapter] = useState(0);
-  const [activeSpeaker, setActiveSpeaker] = useState(0);
   const countdown = useCountdown("2026-08-01T15:00:00+08:00");
 
   useExperienceMotion({
     reducedMotion,
     rootRef,
-    setActiveSpeaker,
     setActiveTimeline,
-    setActiveWorldChapter,
-    setWorldProgress,
-    worldChapterCount: worldSceneCount
+    setWorldProgress
   });
 
   return (
     <main className="showcase-root" ref={rootRef}>
-      <ExperienceWorld activeSpeaker={activeSpeaker} progress={worldProgress} reducedMotion={reducedMotion} />
+      <ExperienceWorld progress={worldProgress} reducedMotion={reducedMotion} />
       <StickyHeader />
       <StickyBottomBar mode={dockMode} />
       <HeroSection countdown={countdown} />
       <WorldStorySection
-        activeIndex={activeWorldChapter}
-        activeSpeaker={activeSpeaker}
         progress={worldProgress}
         reducedMotion={reducedMotion}
       />

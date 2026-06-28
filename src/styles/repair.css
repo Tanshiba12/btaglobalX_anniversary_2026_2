@@ -23,7 +23,7 @@ html {
 }
 
 .world-scroll {
-  min-height: calc(var(--world-chapter-count) * 36svh);
+  min-height: calc(var(--world-pair-count) * 72svh);
 }
 
 .world-stage-shell {
@@ -32,7 +32,7 @@ html {
 }
 
 .world-panel-stack {
-  width: min(34rem, 42vw);
+  width: auto;
 }
 
 .world-panel {
@@ -570,7 +570,7 @@ html {
   }
 
   .world-scroll {
-    min-height: calc(var(--world-chapter-count) * 40svh);
+    min-height: calc(var(--world-pair-count) * 86svh);
   }
 
   .world-panel-stack {

@@ -1,7 +1,7 @@
 "use client";
 
-import { Suspense, useMemo, useRef } from "react";
-import { Canvas, useFrame, useLoader } from "@react-three/fiber";
+import { Suspense, useRef } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
 import {
   AdditiveBlending,
   BackSide,
@@ -9,15 +9,12 @@ import {
   DoubleSide,
   MathUtils,
   setConsoleFunction,
-  TextureLoader,
   Vector3
 } from "three";
-import { sponsorAssets } from "@/data/assets";
-import { speakerScenes, worldScenes } from "@/data";
-import type { SceneActor, Vector3Tuple } from "@/types/content";
+import { worldScenes } from "@/data";
+import type { Vector3Tuple } from "@/types/content";
 
 type ExperienceWorldProps = {
-  activeSpeaker: number;
   progress: number;
   reducedMotion: boolean;
 };
@@ -50,7 +47,7 @@ type WorldVectorRef = {
   z: number;
 };
 
-export function ExperienceWorld({ activeSpeaker, progress, reducedMotion }: ExperienceWorldProps) {
+export function ExperienceWorld({ progress, reducedMotion }: ExperienceWorldProps) {
   if (reducedMotion) {
     return <div className="experience-world-fallback" aria-hidden="true" />;
   }
@@ -59,14 +56,14 @@ export function ExperienceWorld({ activeSpeaker, progress, reducedMotion }: Expe
     <div className="experience-world" aria-hidden="true">
       <Canvas camera={{ fov: 46, position: [0, 2.2, 9.8] }} dpr={[1, 1.5]} gl={{ antialias: true, alpha: true }}>
         <Suspense fallback={null}>
-          <ExperienceStage activeSpeaker={activeSpeaker} progress={progress} />
+          <ExperienceStage progress={progress} />
         </Suspense>
       </Canvas>
     </div>
   );
 }
 
-function ExperienceStage({ activeSpeaker, progress }: { activeSpeaker: number; progress: number }) {
+function ExperienceStage({ progress }: { progress: number }) {
   const sceneIndexFloat = progress * (worldScenes.length - 1);
   const currentIndex = Math.min(worldScenes.length - 1, Math.floor(sceneIndexFloat));
   const nextIndex = Math.min(worldScenes.length - 1, currentIndex + 1);
@@ -93,12 +90,10 @@ function ExperienceStage({ activeSpeaker, progress }: { activeSpeaker: number; p
 
   return (
     <>
-      <ambientLight intensity={0.56} />
-      <directionalLight color={color} intensity={1.6} position={[4, 7, 4]} />
-      <pointLight color={color} intensity={12} position={[0, 2.6, -2.5]} />
+      <ambientLight intensity={0.72} />
+      <directionalLight color={color} intensity={2.05} position={[4, 7, 4]} />
+      <pointLight color={color} intensity={16} position={[0, 2.6, -2.5]} />
       <VenueEnvironment accent={color} progress={progress} />
-      <SponsorBillboards />
-      <PortraitActors activeSpeaker={activeSpeaker} />
       <GuestSilhouettes progress={progress} />
       <SparkField accent={color} />
     </>
@@ -135,145 +130,21 @@ function VenueEnvironment({ accent, progress }: { accent: string; progress: numb
         <group key={index} position={[0, 0, -index * 1.15]}>
           <mesh position={[-4.8, 1.75, 0]} rotation={[0, 0, Math.PI / 2]}>
             <torusGeometry args={[1.72 + index * 0.025, 0.012, 8, 72, Math.PI]} />
-            <meshBasicMaterial color={index % 2 ? accent : "#ffffff"} transparent opacity={index % 2 ? 0.28 : 0.09} />
+            <meshBasicMaterial color={index % 2 ? accent : "#ffffff"} transparent opacity={index % 2 ? 0.38 : 0.13} />
           </mesh>
           <mesh position={[4.8, 1.75, 0]} rotation={[0, 0, -Math.PI / 2]}>
             <torusGeometry args={[1.72 + index * 0.025, 0.012, 8, 72, Math.PI]} />
-            <meshBasicMaterial color={index % 2 ? accent : "#ffffff"} transparent opacity={index % 2 ? 0.28 : 0.09} />
+            <meshBasicMaterial color={index % 2 ? accent : "#ffffff"} transparent opacity={index % 2 ? 0.38 : 0.13} />
           </mesh>
           <mesh position={[0, 0.018, 0]} rotation={[-Math.PI / 2, 0, 0]}>
             <ringGeometry args={[0.28 + index * 0.1, 0.31 + index * 0.1, 80]} />
-            <meshBasicMaterial color={accent} transparent opacity={0.08} side={DoubleSide} />
+            <meshBasicMaterial color={accent} transparent opacity={0.14} side={DoubleSide} />
           </mesh>
         </group>
       ))}
       <mesh position={[0, 3.8, 0]}>
         <sphereGeometry args={[16, 32, 16]} />
         <meshBasicMaterial color="#050509" side={BackSide} />
-      </mesh>
-    </group>
-  );
-}
-
-function SponsorBillboards() {
-  return (
-    <group>
-      {sponsorAssets.slice(0, 6).map((sponsor, index) => (
-        <ImageBillboard
-          activeOpacity={0.58}
-          height={0.42}
-          inactiveOpacity={0.18}
-          key={sponsor.id}
-          label={sponsor.name}
-          position={[index % 2 === 0 ? -5.25 : 5.25, 1.74, -2.7 - index * 0.78]}
-          src={sponsor.src}
-          width={1.12}
-        />
-      ))}
-    </group>
-  );
-}
-
-function PortraitActors({ activeSpeaker }: { activeSpeaker: number }) {
-  const actors = useMemo<SceneActor[]>(() => {
-    return worldScenes.flatMap((scene) => scene.actors ?? []).filter((actor) => actor.role !== "sponsor");
-  }, []);
-
-  return (
-    <group>
-      {actors.map((actor) => {
-        const speakerIndex = actor.role === "speaker" ? speakerScenes.findIndex((speaker) => speaker.name === actor.label) : -1;
-        const isActiveSpeaker = speakerIndex === -1 || speakerIndex === activeSpeaker;
-        const width = actor.role === "sponsor" ? 1.65 : 1.32;
-        const height = actor.role === "sponsor" ? 0.72 : 1.92;
-
-        if (!actor.image) {
-          return <SilhouetteActor active={isActiveSpeaker} key={actor.id} position={actor.position} />;
-        }
-
-        return (
-          <ImageBillboard
-            active={isActiveSpeaker}
-            height={height}
-            key={actor.id}
-            label={actor.label}
-            position={actor.position}
-            src={actor.image}
-            width={width}
-          />
-        );
-      })}
-    </group>
-  );
-}
-
-function ImageBillboard({
-  active = true,
-  activeOpacity = 0.88,
-  height,
-  inactiveOpacity = 0.08,
-  label,
-  position,
-  src,
-  width
-}: {
-  active?: boolean;
-  activeOpacity?: number;
-  height: number;
-  inactiveOpacity?: number;
-  label: string;
-  position: Vector3Tuple;
-  src: string;
-  width: number;
-}) {
-  const texture = useLoader(TextureLoader, src);
-  const ref = useRef<WorldNodeRef | null>(null);
-  const glowRef = useRef<WorldNodeRef | null>(null);
-
-  useFrame(({ camera, clock }) => {
-    if (!ref.current) return;
-    ref.current.lookAt(camera.position);
-    ref.current.position.y = position[1] + Math.sin(clock.elapsedTime * 0.7 + position[0]) * 0.035;
-    ref.current.scale.setScalar(MathUtils.lerp(ref.current.scale.x, active ? 1 : 0.46, 0.08));
-    if (glowRef.current) {
-      glowRef.current.lookAt(camera.position);
-      glowRef.current.scale.setScalar(MathUtils.lerp(glowRef.current.scale.x, active ? 1 : 0.44, 0.08));
-    }
-  });
-
-  return (
-    <group position={position}>
-      <mesh ref={glowRef} position={[0, 0, -0.035]}>
-        <planeGeometry args={[width + 0.18, height + 0.18]} />
-        <meshBasicMaterial color="#fdd142" transparent opacity={active ? 0.1 : 0.015} side={DoubleSide} />
-      </mesh>
-      <mesh name={label} ref={ref}>
-        <planeGeometry args={[width, height]} />
-        <meshBasicMaterial map={texture} transparent opacity={active ? activeOpacity : inactiveOpacity} side={DoubleSide} toneMapped={false} />
-      </mesh>
-    </group>
-  );
-}
-
-function SilhouetteActor({ active, position }: { active: boolean; position: Vector3Tuple }) {
-  const ref = useRef<WorldNodeRef | null>(null);
-
-  useFrame(({ camera, clock }) => {
-    if (!ref.current) return;
-    ref.current.lookAt(camera.position);
-    ref.current.position.y = position[1] + Math.sin(clock.elapsedTime + position[0]) * 0.025;
-    ref.current.scale.setScalar(MathUtils.lerp(ref.current.scale.x, active ? 1 : 0.5, 0.08));
-  });
-
-  return (
-    <group position={position} ref={ref}>
-      <mesh position={[0, 0.52, 0]}>
-        <sphereGeometry args={[0.18, 24, 16]} />
-        <meshStandardMaterial color={active ? "#fdd142" : "#ffffff"} transparent opacity={active ? 0.68 : 0.08} />
-      </mesh>
-      <mesh position={[0, 0.02, 0]}>
-        <capsuleGeometry args={[0.2, 0.76, 8, 18]} />
-        <meshStandardMaterial color={active ? "#fdd142" : "#ffffff"} transparent opacity={active ? 0.58 : 0.06} />
       </mesh>
     </group>
   );
@@ -326,7 +197,7 @@ function SparkField({ accent }: { accent: string }) {
         return (
           <mesh key={index} position={[Math.cos(angle) * radius, 0.55 + (index % 9) * 0.34, -1.4 - (index % 17) * 0.45]}>
             <sphereGeometry args={[0.012 + (index % 3) * 0.006, 8, 8]} />
-            <meshBasicMaterial blending={AdditiveBlending} color={index % 4 === 0 ? accent : "#ffffff"} transparent opacity={0.18} />
+            <meshBasicMaterial blending={AdditiveBlending} color={index % 4 === 0 ? accent : "#ffffff"} transparent opacity={0.28} />
           </mesh>
         );
       })}

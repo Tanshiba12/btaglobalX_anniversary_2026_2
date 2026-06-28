@@ -1,136 +1,99 @@
 import clsx from "clsx";
 import type { CSSProperties } from "react";
-import { CalendarDays, MapPin, Ticket } from "lucide-react";
-import { eventDetails, scrollChapters, speakerScenes, sponsorAssets } from "@/data";
-import { SafeIcon } from "../ui/SafeIcon";
+import { scrollChapters } from "@/data";
 
 type WorldStorySectionProps = {
-  activeIndex: number;
-  activeSpeaker: number;
   progress: number;
   reducedMotion: boolean;
 };
 
 type WorldScrollStyle = CSSProperties & {
-  "--world-chapter-count": number;
+  "--world-pair-count": number;
   "--world-progress": number;
 };
 
-type WorldAnchorStyle = CSSProperties & {
-  "--anchor-top": string;
+type WorldPanelStyle = CSSProperties & {
+  "--panel-opacity": number;
+  "--panel-rotate-y": string;
+  "--panel-rotate-z": string;
+  "--panel-scale": number;
+  "--panel-x": string;
+  "--panel-y": string;
 };
 
-export function WorldStorySection({ activeIndex, activeSpeaker, progress, reducedMotion }: WorldStorySectionProps) {
-  const anchorCount = Math.max(1, scrollChapters.length - 1);
+const clamp01 = (value: number) => Math.min(1, Math.max(0, value));
+const smoothstep = (value: number) => {
+  const clamped = clamp01(value);
+  return clamped * clamped * (3 - 2 * clamped);
+};
+
+export function WorldStorySection({ progress, reducedMotion }: WorldStorySectionProps) {
+  const finalIndex = scrollChapters.length - 1;
+  const sceneGroups = Array.from({ length: Math.ceil(scrollChapters.length / 2) }, (_, groupIndex) => groupIndex * 2);
+  const groupCount = Math.max(1, sceneGroups.length);
+  const boundedProgress = clamp01(progress);
+  const pairProgress = Math.min(groupCount - 1, boundedProgress * groupCount);
 
   return (
     <section
       className={clsx("world-scroll", reducedMotion && "is-reduced")}
       data-world-scroll
-      style={{ "--world-progress": progress, "--world-chapter-count": scrollChapters.length } as WorldScrollStyle}
+      style={{ "--world-progress": progress, "--world-pair-count": groupCount } as WorldScrollStyle}
     >
       <div className="world-stage">
         <div className="world-stage-shell">
-          <div className="world-progress-rail" aria-hidden="true">
-            <span style={{ transform: `scaleY(${Math.max(0.03, progress)})` }} />
-          </div>
-          <div className="world-compass" aria-label="Experience scenes">
-            {scrollChapters.map((chapter, index) => (
-              <a className={clsx(index === activeIndex && "is-active")} href={`#${chapter.anchorId}`} key={chapter.id}>
-                {chapter.number}
-              </a>
-            ))}
-          </div>
           <div className="world-panel-stack">
-            {scrollChapters.map((chapter, index) => (
-              <article className={clsx("world-panel", index === activeIndex && "is-active")} key={chapter.id}>
-                <span className="world-panel-number">{chapter.number}</span>
-                <p className="world-panel-meta">{chapter.meta}</p>
-                <h2>{chapter.title}</h2>
-                <p>{chapter.copy}</p>
-                {chapter.id === "journey-tunnel" && <JourneyMiniMap />}
-                {chapter.id === "forum-theatre" && <SpeakerFocus activeSpeaker={activeSpeaker} />}
-                {chapter.id === "registration-hall" && <RegistrationActions />}
-                {chapter.id === "finale-gallery" && <FinaleActions />}
-                {chapter.ctaHref && chapter.ctaLabel && (
-                  <a className="world-action-link" href={chapter.ctaHref}>
-                    {chapter.ctaLabel}
-                  </a>
-                )}
-              </article>
-            ))}
-          </div>
-          <div className="world-status-card" aria-live="polite">
-            <span>{scrollChapters[activeIndex]?.number ?? "01"} / {String(scrollChapters.length).padStart(2, "0")}</span>
-            <strong>{scrollChapters[activeIndex]?.title}</strong>
+            {scrollChapters.map((chapter, index) => {
+              const groupIndex = index === finalIndex ? Math.ceil(finalIndex / 2) : Math.floor(index / 2);
+              const groupPhase = pairProgress - groupIndex;
+              const phaseDistance = Math.abs(groupPhase);
+              const visibility = 1 - smoothstep((phaseDistance - 0.1) / 0.52);
+              const isLeftLane = index % 2 === 0;
+              const isFinal = index === finalIndex;
+              const isVisible = visibility > 0.02;
+              const isIncoming = groupPhase < -0.1 && isVisible;
+              const isOutgoing = groupPhase > 0.1 && isVisible && !isFinal;
+              const isFinalFocus = isFinal && isVisible;
+              const laneDirection = isLeftLane ? -1 : 1;
+              const tiltDirection = isLeftLane ? 1 : -1;
+              const slide = groupPhase * laneDirection * 7;
+              const lift = Math.abs(groupPhase) * 0.55;
+              const scale = isFinal ? 1.03 + visibility * 0.03 : 0.96 + visibility * 0.05;
+              const panelStyle = {
+                "--panel-opacity": visibility,
+                "--panel-rotate-y": isFinal ? "0deg" : `${tiltDirection * 6}deg`,
+                "--panel-rotate-z": isFinal ? "0deg" : `${tiltDirection * 5}deg`,
+                "--panel-scale": scale,
+                "--panel-x": isFinal ? "0vw" : `${slide}vw`,
+                "--panel-y": `${lift}rem`
+              } as WorldPanelStyle;
+
+              return (
+                <article
+                  className={clsx(
+                    "world-panel",
+                    isLeftLane ? "is-left-lane" : "is-right-lane",
+                    isVisible && "is-active",
+                    isVisible && !isFinalFocus && "is-pair-visible",
+                    isVisible && !isFinalFocus && (isLeftLane ? "is-pair-left" : "is-pair-right"),
+                    isOutgoing && "is-outgoing",
+                    isIncoming && "is-incoming",
+                    isFinal && "is-final-scene",
+                    isFinalFocus && "is-final-focus"
+                  )}
+                  key={chapter.id}
+                  style={panelStyle}
+                >
+                  <span className="world-panel-number">{chapter.number}</span>
+                  <p className="world-panel-meta">{chapter.meta}</p>
+                  <h2>{chapter.title}</h2>
+                  <p>{chapter.copy}</p>
+                </article>
+              );
+            })}
           </div>
         </div>
       </div>
-      <div className="world-anchor-track" aria-hidden="true">
-        {scrollChapters.map((chapter, index) => (
-          <div
-            className="world-anchor-marker"
-            id={chapter.anchorId}
-            key={chapter.id}
-            style={{ "--anchor-top": `${(index / anchorCount) * 100}%` } as WorldAnchorStyle}
-          />
-        ))}
-      </div>
     </section>
-  );
-}
-
-function JourneyMiniMap() {
-  const stops = ["Arrival", "Forum", "Market", "Media", "Runway", "Gala", "Finale"];
-
-  return (
-    <div className="world-mini-map" aria-label="Event journey scene path">
-      {stops.map((stop, index) => (
-        <span key={stop}>
-          <em>{String(index + 1).padStart(2, "0")}</em>
-          {stop}
-        </span>
-      ))}
-    </div>
-  );
-}
-
-function SpeakerFocus({ activeSpeaker }: { activeSpeaker: number }) {
-  const speaker = speakerScenes[activeSpeaker] ?? speakerScenes[0];
-
-  return (
-    <div className="world-speaker-focus">
-      <span>{speaker.number}</span>
-      <strong>{speaker.name}</strong>
-      <p>{speaker.topic}</p>
-      <small>{speaker.source === "official" ? "Official portrait in scene" : `Photo will be added: ${speaker.name}`}</small>
-    </div>
-  );
-}
-
-function RegistrationActions() {
-  return (
-    <div className="world-action-grid">
-      <a href="#timeline">
-        <SafeIcon aria-hidden="true" icon={CalendarDays} />
-        Full itinerary
-      </a>
-      <a href={`mailto:${eventDetails.email}`}>
-        <SafeIcon aria-hidden="true" icon={Ticket} />
-        Register interest
-      </a>
-    </div>
-  );
-}
-
-function FinaleActions() {
-  return (
-    <div className="world-action-grid">
-      <a href="#location">
-        <SafeIcon aria-hidden="true" icon={MapPin} />
-        {eventDetails.venue}
-      </a>
-      <span>{sponsorAssets.length} official partner logos loaded</span>
-    </div>
   );
 }
