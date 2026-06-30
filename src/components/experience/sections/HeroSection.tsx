@@ -2,7 +2,7 @@ import type { CSSProperties } from "react";
 import Image from "next/image";
 import { ArrowUpRight, CalendarDays, Clock3, MapPin } from "lucide-react";
 import { eventDetails } from "@/data";
-import { brandAssets, heroAssets, sponsorAssets } from "@/data/assets";
+import { heroAssets, sponsorAssets } from "@/data/assets";
 import type { CountdownUnit } from "../hooks/useCountdown";
 import { SafeIcon } from "../ui/SafeIcon";
 export function HeroSection({
@@ -16,32 +16,11 @@ export function HeroSection({
         <video aria-hidden="true" autoPlay loop muted playsInline preload="metadata">
           <source src={heroAssets.backgroundVideo.src} type="video/mp4" />
         </video>
-        <Image
-          alt=""
-          className="hero-venue-image"
-          fill
-          priority
-          sizes="100vw"
-          src={brandAssets.venue.src}
-        />
       </div>
-      <div className="hero-scrim" />
-      <div className="hero-light-beam" aria-hidden="true" />
-      <div className="hero-star-field hero-star-field-one" aria-hidden="true" />
-      <div className="hero-star-field hero-star-field-two" aria-hidden="true" />
-      <div className="hero-star-stream" aria-hidden="true" />
+      <div className="hero-video-shade" aria-hidden="true" />
 
       <div className="hero-content">
         <div className="hero-event-lockup">
-          <div className="hero-brand-logo">
-            <Image
-              alt="BTA GlobalX"
-              height={112}
-              src={brandAssets.logo.src}
-              unoptimized
-              width={112}
-            />
-          </div>
           <p className="hero-presents" data-hero-chip>
             Presents
           </p>
@@ -50,13 +29,13 @@ export function HeroSection({
             <span className="hero-title-line hero-title-awards">Excellence Award 2026</span>
           </h1>
           <p className="hero-tagline" data-hero-chip>
-            Celebrating impact . honoring excellence . inspiring change
+            A festive evening of excellence, culture, wellness, partnership, and shared recognition
           </p>
         </div>
 
         <div className="hero-countdown-card" aria-label="Countdown to event" data-hero-chip>
           <div className="hero-countdown-topline">
-            <strong>Opening in</strong>
+            <strong>Happening in</strong>
             <SafeIcon aria-hidden="true" icon={ArrowUpRight} />
           </div>
           <div className="hero-countdown-units">
@@ -93,7 +72,10 @@ export function HeroSection({
         <div className="hero-sponsor-strip" aria-label="Event sponsors and partners" data-hero-chip>
           <span className="hero-sponsor-label">Our Event Sponsors &amp; Partners</span>
           <div className="hero-sponsor-orbit">
-            <div className="hero-sponsor-wheel">
+            <div
+              className="hero-sponsor-wheel"
+              style={{ "--sponsor-count": sponsorAssets.length } as CSSProperties}
+            >
               {sponsorAssets.map((logo, index) => (
                 <span
                   className="hero-sponsor-item"
@@ -114,7 +96,6 @@ export function HeroSection({
                 </span>
               ))}
             </div>
-            <span className="hero-sponsor-orbit-core">8 partners</span>
           </div>
         </div>
       </div>

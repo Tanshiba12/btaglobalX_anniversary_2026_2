@@ -9,6 +9,7 @@ export type VideoAsset = {
   id: string;
   label: string;
   src: string;
+  kind?: "background" | "embed" | "direct";
 };
 
 export type SponsorAsset = {
@@ -33,8 +34,24 @@ export const brandAssets = {
 export const heroAssets = {
   backgroundVideo: {
     id: "particle-star-background",
+    kind: "background",
     label: "Particle star hero background",
     src: "/assets/hero/particle-star-background.mp4"
+  }
+} as const satisfies Record<string, VideoAsset>;
+
+export const eventVideoAssets = {
+  official: {
+    id: "bta-official-video",
+    kind: "embed",
+    label: "BTA Official Video",
+    src: ""
+  },
+  teaser: {
+    id: "bta-event-teaser-video",
+    kind: "embed",
+    label: "Event Teaser Video",
+    src: ""
   }
 } as const satisfies Record<string, VideoAsset>;
 
@@ -45,8 +62,7 @@ export const sponsorAssets: readonly SponsorAsset[] = [
   { id: "btv-international", name: "BTV International", src: "/assets/partners/BTV International.png" },
   { id: "european-wellness", name: "European Wellness", src: "/assets/partners/european wellness.webp" },
   { id: "iseigur", name: "ISEIGUR", src: "/assets/partners/ISEIGUR logo.png" },
-  { id: "shindo", name: "Shindo", src: "/assets/partners/shindo.png" },
-  { id: "tycoon-global", name: "Tycoon Global", src: "/assets/partners/Tycoon.png" }
+  { id: "shindo", name: "Shindo", src: "/assets/partners/shindo.png" }
 ] as const satisfies readonly SponsorAsset[];
 
 export const generatedAssets = {

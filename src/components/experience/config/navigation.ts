@@ -21,7 +21,7 @@ export const navItems: NavItem[] = [
   { href: "#event-journey", label: "Program" },
   { href: "#timeline", label: "Timeline" },
   { href: "#register", label: "Register" },
-  { href: "#location", label: "Location" }
+  { href: "#contact", label: "Location" }
 ];
 
 export const whatsappLink = cleanPhone ? `https://wa.me/${cleanPhone}` : `mailto:${eventDetails.email}`;

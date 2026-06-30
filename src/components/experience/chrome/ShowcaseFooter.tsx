@@ -1,20 +1,20 @@
-import { Mail, Phone, Play } from "lucide-react";
+import { Mail, MapPin, Phone, Play } from "lucide-react";
 import { eventDetails } from "@/data";
-import { DockControls } from "./DockControls";
 import { SafeIcon } from "../ui/SafeIcon";
 export function ShowcaseFooter() {
   return (
     <footer className="showcase-footer" data-animate="card" id="contact">
       <div className="footer-dock-sentinel" aria-hidden="true" />
-      <div className="footer-dock" aria-label="Footer page actions">
-        <DockControls />
-      </div>
       <div className="section-inner footer-grid">
         <div className="footer-left">
-          <h2>Maximizing global recognition, media visibility, and legacy.</h2>
+          <p className="eyebrow">Location &amp; Contact</p>
+          <h2>BTA GlobalX Anniversary &amp; Excellence Awards 2026</h2>
           <div className="footer-card">
-            <strong>Become a partner</strong>
-            <span>Interested in sponsoring or supporting BTA GlobalX?</span>
+            <strong>Hotel Sheraton Johor Bahru, Malaysia</strong>
+            <span>
+              <SafeIcon aria-hidden="true" icon={MapPin} />
+              {eventDetails.date} - MYT {eventDetails.time}
+            </span>
             <a className="dark-pill" href={`mailto:${eventDetails.email}`}>
               Contact us
             </a>
@@ -34,7 +34,6 @@ export function ShowcaseFooter() {
               {phone}
             </a>
           ))}
-          <p>{eventDetails.date}</p>
           <p>{eventDetails.venue}</p>
           <div className="footer-buttons">
             <a className="outline-pill" href="#register">

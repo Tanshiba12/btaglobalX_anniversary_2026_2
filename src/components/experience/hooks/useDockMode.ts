@@ -4,22 +4,11 @@ import { useEffect, useRef, useState } from "react";
 
 export type DockMode = "visible" | "hidden" | "footer";
 
-function isInReadingBand(element: Element | null, viewportHeight: number) {
-  if (!element) {
-    return false;
-  }
-
-  const rect = element.getBoundingClientRect();
-  return rect.top < viewportHeight * 0.72 && rect.bottom > viewportHeight * 0.28;
-}
-
 export function useDockMode() {
   const [mode, setMode] = useState<DockMode>("visible");
   const currentModeRef = useRef<DockMode>("visible");
 
   useEffect(() => {
-    const hero = document.querySelector("#top");
-    const world = document.querySelector("[data-world-scroll]");
     const footerSentinel = document.querySelector(".footer-dock-sentinel");
 
     const setNextMode = (nextMode: DockMode) => {
@@ -40,12 +29,7 @@ export function useDockMode() {
         return;
       }
 
-      if (isInReadingBand(hero, viewportHeight) || isInReadingBand(world, viewportHeight)) {
-        setNextMode("visible");
-        return;
-      }
-
-      setNextMode("hidden");
+      setNextMode("visible");
     };
 
     updateMode();

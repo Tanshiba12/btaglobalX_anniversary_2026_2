@@ -4,9 +4,8 @@ export function DockControls() {
   return (
     <div className="dock-controls">
       <div className="dock-nav" aria-label="Page sections">
-        {navItems.map((item, index) => (
+        {navItems.map((item) => (
           <a href={item.href} key={item.href}>
-            <span>{String(index + 1).padStart(2, "0")}</span>
             <strong>{item.label}</strong>
           </a>
         ))}

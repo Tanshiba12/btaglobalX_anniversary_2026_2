@@ -9,7 +9,7 @@ export const faqs: FaqItem[] = [
   {
     question: "What happens during the full event day?",
     answer:
-      "The program runs from 3:00 PM to 10:30 PM across three segments: forum, bazaar, art exhibition, magazine launch, anniversary ceremony, red carpet, culture, fashion, gala dinner, awards, lucky draw, and closing photo session."
+      "The program runs from 5:00 PM to 10:30 PM across registration, seminar, exhibition, cultural performance, fashion show, gala dinner, lucky draw, awards, and closing photography."
   },
   {
     question: "Which registration package should I choose?",
@@ -24,7 +24,7 @@ export const faqs: FaqItem[] = [
   {
     question: "Will there be media and red carpet opportunities?",
     answer:
-      "Yes. The event includes red carpet interview bites, media exposure, Tycoon Global magazine moments, and networking visibility depending on the selected package and event role."
+      "Yes. The event includes red carpet interview bites, media exposure, official event coverage, and networking visibility depending on the selected package and event role."
   },
   {
     question: "How do I register or ask for details?",

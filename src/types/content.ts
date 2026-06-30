@@ -37,10 +37,10 @@ export type RegistrationPackage = {
   id: string;
   name: string;
   tier: "General" | "Signature" | "Silver" | "Gold" | "Platinum";
-  price: string;
   accent: string;
   summary: string;
   benefits: string[];
+  formUrl?: string;
 };
 
 export type FaqItem = {

@@ -7,4 +7,3 @@ export { itinerary } from "./itinerary";
 export { actPairs, journeyActs } from "./journey";
 export { registrationPackages } from "./registration";
 export { panelTopics, speakerScenes, speakers } from "./speakers";
-export { scrollChapters, worldSceneCount, worldScenes } from "./world";

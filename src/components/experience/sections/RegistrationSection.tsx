@@ -1,91 +1,54 @@
-"use client";
-
-import clsx from "clsx";
-import { useState } from "react";
-import { ArrowRight, ChevronDown, Ticket } from "lucide-react";
-import { eventDetails } from "@/data";
-import { packageTierIcons, registrationSlides } from "../config/experienceContent";
+import { ArrowRight, Ticket } from "lucide-react";
+import { eventDetails, registrationPackages } from "@/data";
+import { packageTierIcons } from "../config/experienceContent";
 import { SafeIcon } from "../ui/SafeIcon";
-export function RegistrationSection({ reducedMotion }: { reducedMotion: boolean }) {
-  const [visiblePrices, setVisiblePrices] = useState<Record<string, boolean>>({});
 
-  const togglePrice = (id: string) => {
-    setVisiblePrices((current) => ({ ...current, [id]: !current[id] }));
-  };
-
+export function RegistrationSection() {
   return (
-    <section className={clsx("site-section registration-section", reducedMotion && "is-reduced")} id="register">
-      <div className="section-inner registration-pin">
-        <div className="registration-hero" data-animate="card">
-          <div>
-            <p className="eyebrow">Registration</p>
-            <h2>Choose the pass that fits your place in the celebration.</h2>
-          </div>
-          <a className="dark-pill" href={`mailto:${eventDetails.email}`}>
-            Contact registration
-            <SafeIcon aria-hidden="true" icon={ArrowRight} />
-          </a>
+    <section className="site-section registration-section" id="register">
+      <div className="section-inner registration-layout">
+        <div className="section-heading is-left" data-animate="text">
+          <p>Registration</p>
+          <h2>Choose your event category</h2>
+          <span>
+            Registration forms will be connected to each category once the Google Drive links are
+            provided. Each category shows the access details guests need before choosing a form.
+          </span>
         </div>
-        <div className="registration-progress" aria-hidden="true">
-          <span className="registration-progress-fill" />
-        </div>
-        <div className="registration-slide-viewport" aria-label="Registration package slides">
-          <div className="registration-slide-track">
-            {registrationSlides.map((slide) => (
-              <article className="registration-slide" key={slide.id}>
-                <div className="registration-slide-heading">
-                  <span>{slide.eyebrow}</span>
-                  <h3>{slide.title}</h3>
-                  <p>{slide.summary}</p>
-                </div>
-                <div className={clsx("package-grid", `package-grid-${slide.id}`)} data-stagger>
-                  {slide.packages.map((pkg) => {
-                    const PackageIcon = packageTierIcons[pkg.tier] ?? Ticket;
-                    const priceVisible = Boolean(visiblePrices[pkg.id]);
 
-                    return (
-                      <article
-                        className={clsx("package-card", `tier-${pkg.tier.toLowerCase()}`, priceVisible && "is-price-visible")}
-                        data-stagger-item
-                        key={pkg.id}
-                      >
-                        <div className="package-icon-row">
-                          <SafeIcon aria-hidden="true" icon={PackageIcon} />
-                          <span>{pkg.tier}</span>
-                        </div>
-                        <h4>{pkg.name}</h4>
-                        <p>{pkg.summary}</p>
-                        <button
-                          aria-expanded={priceVisible}
-                          className="price-toggle"
-                          type="button"
-                          onClick={() => togglePrice(pkg.id)}
-                        >
-                          {priceVisible ? "Hide price" : "Reveal price"}
-                          <SafeIcon aria-hidden="true" icon={ChevronDown} />
-                        </button>
-                        <div className="package-price-slot" aria-hidden={!priceVisible}>
-                          <strong>{pkg.price}</strong>
-                        </div>
-                        <details>
-                          <summary>
-                            Key benefits
-                            <SafeIcon aria-hidden="true" icon={ChevronDown} />
-                          </summary>
-                          <ul>
-                            {pkg.benefits.map((benefit) => (
-                              <li key={benefit}>{benefit}</li>
-                            ))}
-                          </ul>
-                        </details>
-                      </article>
-                    );
-                  })}
+        <div className="registration-category-grid" data-stagger>
+          {registrationPackages.map((pkg) => {
+            const PackageIcon = packageTierIcons[pkg.tier] ?? Ticket;
+
+            return (
+              <article className={`registration-category-card tier-${pkg.tier.toLowerCase()}`} data-stagger-item key={pkg.id}>
+                <div className="registration-category-top">
+                  <SafeIcon aria-hidden="true" icon={PackageIcon} />
+                  <span>{pkg.tier}</span>
                 </div>
+                <h3>{pkg.name}</h3>
+                <p>{pkg.summary}</p>
+                <ul>
+                  {pkg.benefits.slice(0, 6).map((benefit) => (
+                    <li key={benefit}>{benefit}</li>
+                  ))}
+                </ul>
+                {pkg.formUrl ? (
+                  <a className="registration-form-link" href={pkg.formUrl} rel="noreferrer" target="_blank">
+                    Open registration form
+                    <SafeIcon aria-hidden="true" icon={ArrowRight} />
+                  </a>
+                ) : (
+                  <span className="registration-form-link is-pending">Google Drive form link pending</span>
+                )}
               </article>
-            ))}
-          </div>
+            );
+          })}
         </div>
+
+        <p className="registration-note" data-animate="text">
+          Need help before the forms are connected? Email {eventDetails.email}.
+        </p>
       </div>
     </section>
   );

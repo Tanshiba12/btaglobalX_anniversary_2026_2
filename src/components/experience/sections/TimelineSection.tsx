@@ -1,47 +1,51 @@
-import clsx from "clsx";
-import { eventDetails } from "@/data";
-import { timelineBeats } from "../config/experienceContent";
-export function TimelineSection({ activeIndex }: { activeIndex: number }) {
-  const activeBeat = timelineBeats[activeIndex] ?? timelineBeats[0];
+import { Clock3 } from "lucide-react";
+import { eventDetails, itinerary } from "@/data";
+import { SafeIcon } from "../ui/SafeIcon";
 
+export function TimelineSection() {
   return (
     <section className="site-section timeline-section" id="timeline">
-      <div className="section-inner timeline-pin">
-        <div className="timeline-header" data-animate="text">
-          <div className="section-heading is-left">
-            <p>Event timeline</p>
-            <h2>Event Day Timeline</h2>
-            <span>{eventDetails.time}</span>
-          </div>
-          <div className="timeline-current" aria-live="polite">
-            <span>Current segment</span>
-            <strong>{activeBeat.time}</strong>
-            <p>{activeBeat.scene}</p>
-          </div>
+      <div className="section-inner timeline-table-layout">
+        <div className="section-heading is-left" data-animate="text">
+          <p>Timeline / Itinerary</p>
+          <h2>Event Day Programme at a Glance</h2>
+          <span>MYT {eventDetails.time}</span>
         </div>
-        <div className="timeline-progress" aria-hidden="true">
-          <span className="timeline-progress-fill" />
-        </div>
-        <div className="timeline-viewport" aria-label="Event day timeline slides">
-          <div className="timeline-track">
-            {timelineBeats.map((beat, index) => (
-              <article className={clsx("timeline-segment", activeIndex === index && "is-active")} key={beat.time}>
-                <div className="timeline-marker">
-                  <span>{beat.label}</span>
-                </div>
-                <div className="timeline-card">
-                  <p>{beat.time}</p>
-                  <h3>{beat.title}</h3>
-                  <strong>{beat.scene}</strong>
-                  <ul>
-                    {beat.activities.map((activity) => (
-                      <li key={activity}>{activity}</li>
-                    ))}
-                  </ul>
-                </div>
-              </article>
-            ))}
-          </div>
+
+        <div className="timeline-table-wrap" data-animate="card">
+          <table className="timeline-table">
+            <thead>
+              <tr>
+                <th scope="col">Time</th>
+                <th scope="col">Programme</th>
+                <th scope="col">Experience</th>
+                <th scope="col">Highlights</th>
+              </tr>
+            </thead>
+            <tbody>
+              {itinerary.map((segment) => (
+                <tr key={segment.time}>
+                  <td data-label="Time">
+                    <span>
+                      <SafeIcon aria-hidden="true" icon={Clock3} />
+                      {segment.time}
+                    </span>
+                  </td>
+                  <td data-label="Programme">
+                    <strong>{segment.title}</strong>
+                  </td>
+                  <td data-label="Experience">{segment.scene}</td>
+                  <td data-label="Highlights">
+                    <ul>
+                      {segment.activities.map((activity) => (
+                        <li key={activity}>{activity}</li>
+                      ))}
+                    </ul>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     </section>

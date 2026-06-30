@@ -203,7 +203,7 @@ export const scenarioScenes: ScenarioScene[] = [
         title: "Cover moment"
       },
       {
-        body: "Editor speech and partner badges connect BTA GlobalX, Ayu Herba, BTA Productions, Tycoon Global, and ISEIGUR.",
+        body: "Editor speech and partner badges connect BTA GlobalX, Ayu Herba, BTA Productions, BTV International, and ISEIGUR.",
         label: "Alliance",
         title: "Strategic reveal"
       },

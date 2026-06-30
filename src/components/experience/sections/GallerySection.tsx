@@ -5,8 +5,8 @@ export function GallerySection() {
     <section className="site-section gallery-section" id="gallery-finale">
       <div className="section-inner">
         <div className="section-heading is-left" data-animate="text">
-          <p>Our previous gallery</p>
-          <h2>Proof, memory, and momentum</h2>
+          <p>Photos</p>
+          <h2>Our Memory &amp; Momentum</h2>
         </div>
         <div className="gallery-wall" data-stagger>
           {galleryTiles.map((tile) => (

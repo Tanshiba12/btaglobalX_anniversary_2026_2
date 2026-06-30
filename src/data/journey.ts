@@ -1,178 +1,33 @@
 import {
-  Calendar,
-  CheckCircle,
-  FileText,
+  Brain,
   Gift,
-  Globe2,
-  Handshake,
-  Images,
-  MapPin,
-  Mic2,
   Music2,
   Palette,
   Sparkles,
-  Trophy,
-  Users,
-  Video,
-  Zap
+  Trophy
 } from "lucide-react";
 import { sceneAssets } from "@/data/assets";
 import type { ActPair, JourneyAct } from "@/types/content";
 
 export const journeyActs: JourneyAct[] = [
   {
-    id: "arrival-registration",
+    id: "intercultural-music-dance",
     number: 1,
-    title: "Welcome Reception",
-    subtitle: "Arrive ready for a celebration",
+    title: "Intercultural Music & Dance 2026",
+    subtitle: "A joyful cultural opening for the evening",
     description:
-      "Guests are welcomed at Sheraton Johor Bahru with clear registration, warm host guidance, and the first photography moments of the anniversary day.",
+      "A celebration of rhythm, heritage, and shared identity that brings guests into the gala atmosphere with warmth and movement.",
     highlights: [
-      { id: "registration", label: "Guest check-in", icon: FileText },
-      { id: "confirmation", label: "Welcome host", icon: CheckCircle },
-      { id: "venue-entry", label: "Sheraton arrival", icon: Zap }
+      { id: "music", label: "Live cultural rhythm", icon: Music2 },
+      { id: "dance", label: "Stage performance", icon: Sparkles },
+      { id: "welcome", label: "Guest energy", icon: Gift }
     ],
     subSections: [
       {
-        id: "guest-arrival",
-        label: "First impression",
-        title: "A warm opening",
-        description: "The event begins with a calm welcome desk, visible hosts, and a venue atmosphere that feels prepared.",
-        icon: MapPin
-      },
-      {
-        id: "access-pass",
-        label: "Guest flow",
-        title: "Easy movement",
-        description: "Guests know where to go next, who to meet, and how the programme will unfold.",
-        icon: CheckCircle
-      }
-    ],
-    image: sceneAssets.arrival.src,
-    mediaType: "image",
-    tone: "arrival"
-  },
-  {
-    id: "life-management-forum",
-    number: 2,
-    title: "Mind & Life Forum",
-    subtitle: "Ideas for wellbeing, leadership, and modern living",
-    description:
-      "The afternoon gathers respected voices around practical wellbeing, regenerative science, inner balance, beauty, discipline, and meaningful lifestyle change.",
-    highlights: [
-      { id: "keynote", label: "Keynote direction", icon: Mic2 },
-      { id: "panel", label: "Panel exchange", icon: Users },
-      { id: "insights", label: "Practical insight", icon: Sparkles }
-    ],
-    subSections: [
-      {
-        id: "speaker-board",
-        label: "Speaker board",
-        title: "Seven perspectives",
-        description: "Each speaker brings one clear point of view, giving guests ideas they can carry beyond the event.",
-        icon: Mic2
-      },
-      {
-        id: "forum-topics",
-        label: "Forum themes",
-        title: "Practical inspiration",
-        description: "Shindo, Ayurveda, regenerative science, mental health, meditation, and integrated living.",
-        icon: Sparkles
-      }
-    ],
-    image: sceneAssets.forum.src,
-    mediaType: "image",
-    tone: "forum"
-  },
-  {
-    id: "wellness-market",
-    number: 3,
-    title: "Wellness & Art Discovery",
-    subtitle: "Meet the brands, makers, and ideas behind the celebration",
-    description:
-      "The guest journey opens into a curated discovery floor where wellness brands, creative products, sustainable art, and new partnerships can be experienced up close.",
-    highlights: [
-      { id: "bazaar", label: "Premium bazaar", icon: Sparkles },
-      { id: "art-exhibition", label: "Creative art", icon: Palette },
-      { id: "wellness", label: "Wellness fair", icon: Gift }
-    ],
-    subSections: [
-      {
-        id: "vendors",
-        label: "Brand discovery",
-        title: "Meet the makers",
-        description: "Guests meet founders, products, and ideas that fit the wellness and lifestyle conversation.",
-        icon: Sparkles
-      },
-      {
-        id: "art-gallery",
-        label: "Creative showcase",
-        title: "Art with purpose",
-        description: "A softer cultural layer gives the day texture beyond the stage.",
-        icon: Palette
-      }
-    ],
-    image: sceneAssets.market.src,
-    mediaType: "image",
-    tone: "market"
-  },
-  {
-    id: "media-premiere",
-    number: 4,
-    title: "Magazine & Alliance Premiere",
-    subtitle: "A public moment for partners, media, and shared ambition",
-    description:
-      "The celebration turns editorial with the magazine reveal, partner presence, media networking, and alliance moments designed for visibility and momentum.",
-    highlights: [
-      { id: "magazine-launch", label: "Magazine reveal", icon: FileText },
-      { id: "strategic-alliance", label: "Alliance moment", icon: Handshake },
-      { id: "partner-showcase", label: "Media visibility", icon: Globe2 }
-    ],
-    subSections: [
-      {
-        id: "magazine-reveal",
-        label: "Editorial reveal",
-        title: "The cover moment",
-        description: "The editorial moment gives partners and guests a visible reason to gather around the story.",
-        icon: FileText
-      },
-      {
-        id: "partnerships",
-        label: "Alliance",
-        title: "Partners on stage",
-        description: "Sponsors, media partners, and supporting organisations become part of the celebration narrative.",
-        icon: Handshake
-      }
-    ],
-    image: sceneAssets.media.src,
-    mediaType: "image",
-    tone: "media"
-  },
-  {
-    id: "red-carpet-runway",
-    number: 5,
-    title: "Red Carpet Showcase",
-    subtitle: "Culture, fashion, interviews, and arrival energy",
-    description:
-      "The evening becomes visible through red carpet arrivals, interview moments, cultural performance, heritage fashion, and the joyful energy of guests entering the spotlight.",
-    highlights: [
-      { id: "red-carpet", label: "Red carpet", icon: Video },
-      { id: "performance", label: "Cultural stage", icon: Music2 },
-      { id: "fashion-show", label: "Heritage runway", icon: Sparkles }
-    ],
-    subSections: [
-      {
-        id: "interviews",
-        label: "Media",
-        title: "Arrival stories",
-        description: "VIP arrivals and interview moments make the celebration feel alive before the gala begins.",
-        icon: Video
-      },
-      {
-        id: "fashion",
-        label: "Culture",
-        title: "Heritage in motion",
-        description: "Cultural expression and contemporary style move together on stage.",
+        id: "cultural-welcome",
+        label: "Highlight",
+        title: "Culture in motion",
+        description: "Music and dance set a festive tone before the formal recognition moments begin.",
         icon: Music2
       }
     ],
@@ -181,31 +36,74 @@ export const journeyActs: JourneyAct[] = [
     tone: "runway"
   },
   {
-    id: "gala-awards",
-    number: 6,
-    title: "Gala Dinner & Awards",
-    subtitle: "Recognition, dinner, and meaningful connection",
+    id: "sustainable-creative-art",
+    number: 2,
+    title: "Sustainable Creative Art Exhibition 2026",
+    subtitle: "Purposeful creativity with a global stage",
     description:
-      "The formal evening brings nominees, partners, leaders, and changemakers together for dinner, recognition, awards, and conversations that can continue after the event.",
+      "Artists and creative changemakers receive a refined showcase where sustainability, beauty, and cultural expression can be seen clearly.",
     highlights: [
-      { id: "gala-dinner", label: "Gala dinner", icon: Globe2 },
-      { id: "awards-ceremony", label: "Excellence Awards", icon: Trophy },
-      { id: "networking", label: "Global networking", icon: Users }
+      { id: "art", label: "Creative exhibition", icon: Palette },
+      { id: "sustainability", label: "Purpose-led work", icon: Sparkles },
+      { id: "visibility", label: "Guest discovery", icon: Trophy }
     ],
     subSections: [
       {
-        id: "dinner",
-        label: "Dinner",
-        title: "Shared table",
-        description: "Dining, networking, and ceremony flow together so guests can celebrate and connect with ease.",
-        icon: Globe2
-      },
+        id: "art-exhibition",
+        label: "Highlight",
+        title: "Creative presence",
+        description: "A curated exhibition gives guests a meaningful visual pause within the event route.",
+        icon: Palette
+      }
+    ],
+    image: sceneAssets.market.src,
+    mediaType: "image",
+    tone: "market"
+  },
+  {
+    id: "mental-health-life-management",
+    number: 3,
+    title: "Mental Health & Life Management Seminar 2026",
+    subtitle: "Practical wellbeing for modern leadership",
+    description:
+      "A thoughtful seminar moment around wellbeing, balance, personal growth, and the emotional strength behind sustainable success.",
+    highlights: [
+      { id: "seminar", label: "Wellbeing seminar", icon: Brain },
+      { id: "discussion", label: "Life management", icon: Sparkles },
+      { id: "insight", label: "Practical insight", icon: Trophy }
+    ],
+    subSections: [
       {
-        id: "awards",
-        label: "Awards",
-        title: "Honour with impact",
-        description: "The Excellence Awards become the emotional centre of the anniversary night.",
-        icon: Trophy
+        id: "life-management",
+        label: "Highlight",
+        title: "Mind and life balance",
+        description: "Guests leave with a clearer connection between inner balance and public excellence.",
+        icon: Brain
+      }
+    ],
+    image: sceneAssets.forum.src,
+    mediaType: "image",
+    tone: "forum"
+  },
+  {
+    id: "gala-dinner-lucky-draw",
+    number: 4,
+    title: "Gala Dinner & Lucky Draw",
+    subtitle: "Connection, celebration, and shared excitement",
+    description:
+      "The dinner brings guests, partners, nominees, and leaders together with premium hospitality and a lively sponsored lucky draw.",
+    highlights: [
+      { id: "dinner", label: "Gala dinner", icon: Gift },
+      { id: "draw", label: "Lucky draw", icon: Sparkles },
+      { id: "network", label: "Guest connection", icon: Trophy }
+    ],
+    subSections: [
+      {
+        id: "gala-dinner",
+        label: "Highlight",
+        title: "A shared table",
+        description: "Dinner and networking become the social centre of the anniversary night.",
+        icon: Gift
       }
     ],
     image: sceneAssets.gala.src,
@@ -213,36 +111,54 @@ export const journeyActs: JourneyAct[] = [
     tone: "gala"
   },
   {
-    id: "closing-memory",
-    number: 7,
-    title: "Finale & Shared Memory",
-    subtitle: "Lucky draw, gratitude, photography, and farewell energy",
+    id: "heritage-fashion-show",
+    number: 5,
+    title: "Heritage Fashion Show 2026",
+    subtitle: "Legacy and elegance on the runway",
     description:
-      "The celebration closes with sponsored draw moments, anniversary gratitude, final photography, and the kind of shared memory guests can proudly revisit.",
+      "A refined fashion presentation celebrates heritage through styling, presence, and stage movement designed for media-ready moments.",
     highlights: [
-      { id: "schedule", label: "Closing cue", icon: Calendar },
-      { id: "lucky-draw", label: "Lucky draw", icon: Gift },
-      { id: "gallery", label: "Final gallery", icon: Images }
+      { id: "heritage", label: "Heritage runway", icon: Sparkles },
+      { id: "fashion", label: "Elegant styling", icon: Trophy },
+      { id: "media", label: "Photo moments", icon: Gift }
     ],
     subSections: [
       {
-        id: "draw",
-        label: "Draw",
-        title: "One last spark",
-        description: "Sponsored prize moments keep the energy warm through the close.",
-        icon: Gift
-      },
-      {
-        id: "photos",
-        label: "Memory",
-        title: "The proof of the day",
-        description: "Closing photography turns attendance into a visible memory for guests and partners.",
-        icon: Images
+        id: "fashion-show",
+        label: "Highlight",
+        title: "Heritage in motion",
+        description: "The runway adds beauty, cultural pride, and visual memory to the gala.",
+        icon: Sparkles
       }
     ],
-    image: sceneAssets.finale.src,
+    image: sceneAssets.runway.src,
     mediaType: "image",
-    tone: "finale"
+    tone: "runway"
+  },
+  {
+    id: "excellence-award",
+    number: 6,
+    title: "Excellence Award 2026",
+    subtitle: "Recognition for people creating meaningful impact",
+    description:
+      "The award ceremony honours leaders, entrepreneurs, humanitarians, and changemakers whose work deserves a visible stage.",
+    highlights: [
+      { id: "award", label: "Recognition", icon: Trophy },
+      { id: "nominees", label: "Nominee spotlight", icon: Sparkles },
+      { id: "legacy", label: "Closing memory", icon: Gift }
+    ],
+    subSections: [
+      {
+        id: "award-stage",
+        label: "Highlight",
+        title: "Honour with presence",
+        description: "Recognition closes the night with gratitude, applause, and official photography.",
+        icon: Trophy
+      }
+    ],
+    image: sceneAssets.gala.src,
+    mediaType: "image",
+    tone: "gala"
   }
 ];
 
