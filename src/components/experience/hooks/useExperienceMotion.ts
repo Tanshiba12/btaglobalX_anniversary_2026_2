@@ -49,7 +49,7 @@ export function useExperienceMotion({ rootRef, reducedMotion }: UseExperienceMot
 
       const context = gsap.context(() => {
         gsap.fromTo(
-          ".hero-media video",
+          ".opening-video-bg video",
           { y: -22, scale: 1.035 },
           {
             y: 24,
@@ -101,6 +101,36 @@ export function useExperienceMotion({ rootRef, reducedMotion }: UseExperienceMot
           { autoAlpha: 1, delay: 0.36, duration: 0.62, ease: "power3.out", stagger: 0.07, y: 0 }
         );
 
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: ".opening-video-shell",
+              start: "top top",
+              end: "bottom bottom",
+              scrub: true
+            }
+          })
+          .to(
+            ".hero-content",
+            {
+              autoAlpha: 0,
+              ease: "power2.out",
+              scale: 0.97,
+              y: -56
+            },
+            0.18
+          )
+          .fromTo(
+            ".overview-video-grid",
+            { autoAlpha: 0, y: 64 },
+            {
+              autoAlpha: 1,
+              ease: "power2.out",
+              y: 0
+            },
+            0.36
+          );
+
         gsap.utils.toArray<HTMLElement>("[data-animate]").forEach((element) => {
           const type = element.dataset.animate;
           const y = type === "image" ? 44 : 28;
@@ -142,7 +172,7 @@ export function useExperienceMotion({ rootRef, reducedMotion }: UseExperienceMot
           );
         });
 
-        gsap.to(".gallery-tile:nth-child(odd)", {
+        gsap.to(".gallery-item:nth-child(odd)", {
           ease: "none",
           scrollTrigger: {
             trigger: ".gallery-section",
@@ -153,7 +183,7 @@ export function useExperienceMotion({ rootRef, reducedMotion }: UseExperienceMot
           y: -24
         });
 
-        gsap.to(".gallery-tile:nth-child(even)", {
+        gsap.to(".gallery-item:nth-child(even)", {
           ease: "none",
           scrollTrigger: {
             trigger: ".gallery-section",

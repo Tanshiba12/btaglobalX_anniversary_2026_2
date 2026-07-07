@@ -1,4 +1,5 @@
-import { ArrowRight, BadgeCheck } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 import { awardCategories } from "@/data";
 import { SafeIcon } from "../ui/SafeIcon";
 
@@ -14,7 +15,7 @@ export function AwardsSection() {
             work deserves to be honoured on the anniversary stage.
           </p>
           <a href="#register">
-            Start nomination
+            Nominate Yourself
             <SafeIcon aria-hidden="true" icon={ArrowRight} />
           </a>
         </div>
@@ -22,9 +23,24 @@ export function AwardsSection() {
         <div className="award-card-grid" data-stagger>
           {awardCategories.map((award) => (
             <article data-stagger-item key={award.title}>
-              <SafeIcon aria-hidden="true" icon={BadgeCheck} />
+              <Image
+                alt={`${award.title} logo`}
+                className="award-category-logo"
+                height={96}
+                src={award.logo}
+                unoptimized
+                width={96}
+              />
               <h3>{award.title}</h3>
               <p>{award.description}</p>
+              <div className="award-nominee-block">
+                <strong>Who Can Be Nominated</strong>
+                <ul>
+                  {award.nomineeTypes.map((nominee) => (
+                    <li key={nominee}>{nominee}</li>
+                  ))}
+                </ul>
+              </div>
             </article>
           ))}
         </div>

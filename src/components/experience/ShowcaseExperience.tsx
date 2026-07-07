@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { ShowcaseFooter } from "./chrome/ShowcaseFooter";
 import { StickyBottomBar } from "./chrome/StickyBottomBar";
-import { StickyHeader } from "./chrome/StickyHeader";
+import { heroAssets } from "@/data/assets";
 import { useCountdown } from "./hooks/useCountdown";
 import { useDockMode } from "./hooks/useDockMode";
 import { useExperienceMotion } from "./hooks/useExperienceMotion";
@@ -32,10 +32,19 @@ export function ShowcaseExperience() {
 
   return (
     <main className="showcase-root" ref={rootRef}>
-      <StickyHeader />
       <StickyBottomBar mode={dockMode} />
-      <HeroSection countdown={countdown} />
-      <EventOverviewVideoSection />
+      <div className="opening-video-shell">
+        <div className="opening-video-bg" aria-hidden="true">
+          <video className="video-backdrop-blur" autoPlay loop muted playsInline preload="metadata">
+            <source src={heroAssets.backgroundVideo.src} type="video/mp4" />
+          </video>
+          <video className="video-backdrop-contain" autoPlay loop muted playsInline preload="metadata">
+            <source src={heroAssets.backgroundVideo.src} type="video/mp4" />
+          </video>
+        </div>
+        <HeroSection countdown={countdown} />
+        <EventOverviewVideoSection />
+      </div>
       <FounderMessageSection />
       <TimelineSection />
       <EventHighlightsSection />

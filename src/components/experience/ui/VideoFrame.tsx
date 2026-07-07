@@ -6,6 +6,7 @@ type VideoFrameProps = {
   body: string;
   ctaLabel?: string;
   title: string;
+  variant?: "default" | "bare";
   video: VideoAsset;
 };
 
@@ -37,10 +38,34 @@ function getEmbedUrl(src: string) {
   return src;
 }
 
-export function VideoFrame({ body, ctaLabel = "Open video", title, video }: VideoFrameProps) {
+export function VideoFrame({ body, ctaLabel = "Open video", title, variant = "default", video }: VideoFrameProps) {
   const hasSource = Boolean(video.src);
   const isDirectVideo = directVideoPattern.test(video.src);
   const embedUrl = getEmbedUrl(video.src);
+  const isBare = variant === "bare";
+
+  if (isBare) {
+    return (
+      <div className="video-feature-frame is-bare-video" data-animate="card">
+        <div className="video-feature-screen">
+          {hasSource && isDirectVideo ? (
+            <video controls playsInline preload="metadata">
+              <source src={video.src} />
+            </video>
+          ) : null}
+          {hasSource && !isDirectVideo ? (
+            <iframe
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              loading="lazy"
+              src={embedUrl}
+              title={title}
+            />
+          ) : null}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="video-feature-frame" data-animate="card">

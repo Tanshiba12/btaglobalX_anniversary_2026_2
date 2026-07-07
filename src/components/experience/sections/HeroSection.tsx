@@ -2,7 +2,7 @@ import type { CSSProperties } from "react";
 import Image from "next/image";
 import { ArrowUpRight, CalendarDays, Clock3, MapPin } from "lucide-react";
 import { eventDetails } from "@/data";
-import { heroAssets, sponsorAssets } from "@/data/assets";
+import { brandAssets, sponsorAssets } from "@/data/assets";
 import type { CountdownUnit } from "../hooks/useCountdown";
 import { SafeIcon } from "../ui/SafeIcon";
 export function HeroSection({
@@ -12,25 +12,25 @@ export function HeroSection({
 }) {
   return (
     <section className="hero-section" id="top">
-      <div className="hero-media">
-        <video aria-hidden="true" autoPlay loop muted playsInline preload="metadata">
-          <source src={heroAssets.backgroundVideo.src} type="video/mp4" />
-        </video>
-      </div>
-      <div className="hero-video-shade" aria-hidden="true" />
-
       <div className="hero-content">
         <div className="hero-event-lockup">
+          <a className="hero-brand-logo" href="#top" aria-label="BTA GlobalX">
+            <Image
+              alt={brandAssets.logo.alt}
+              height={124}
+              priority
+              src={brandAssets.logo.src}
+              unoptimized
+              width={124}
+            />
+          </a>
           <p className="hero-presents" data-hero-chip>
             Presents
           </p>
-          <h1 data-hero-title>
+          <h1 data-hero-title style={{ color: "var(--bta-gold)", WebkitTextFillColor: "var(--bta-gold)" } as CSSProperties}>
             <span className="hero-title-line hero-title-main">Anniversary Gala Night</span>
             <span className="hero-title-line hero-title-awards">Excellence Award 2026</span>
           </h1>
-          <p className="hero-tagline" data-hero-chip>
-            A festive evening of excellence, culture, wellness, partnership, and shared recognition
-          </p>
         </div>
 
         <div className="hero-countdown-card" aria-label="Countdown to event" data-hero-chip>
@@ -46,10 +46,6 @@ export function HeroSection({
               </span>
             ))}
           </div>
-          <p className="hero-countdown-place">
-            <span>{eventDetails.date}</span>
-            <span>Johor Bahru</span>
-          </p>
         </div>
 
         <div className="hero-event-meta" data-hero-chip>
