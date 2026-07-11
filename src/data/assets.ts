@@ -43,25 +43,25 @@ export const heroAssets = {
 export const eventVideoAssets = {
   official: {
     id: "bta-official-video",
-    kind: "embed",
+    kind: "direct",
     label: "BTA Official Video",
-    src: ""
+    src: "/assets/official video/bta OFFICIAL video.mp4"
   },
   teaser: {
     id: "bta-event-teaser-video",
-    kind: "embed",
+    kind: "direct",
     label: "Event Teaser Video",
-    src: ""
+    src: "/assets/teaser video/Teaser Video CR.mp4"
   }
 } as const satisfies Record<string, VideoAsset>;
 
 export const sponsorAssets: readonly SponsorAsset[] = [
   { id: "ayu-herba", name: "Ayu Herba", src: "/assets/partners/Ayu-Herba-logo-1160x400-1.png" },
-  { id: "bta-globalx", name: "BTA GlobalX", src: "/assets/partners/BTA GLOBAL X.png" },
-  { id: "bta-productions", name: "BTA Productions", src: "/assets/partners/BTA PRODUCTION_bgr.jpg.png" },
-  { id: "btv-international", name: "BTV International", src: "/assets/partners/BTV International.png" },
-  { id: "european-wellness", name: "European Wellness", src: "/assets/partners/european wellness.webp" },
-  { id: "iseigur", name: "ISEIGUR", src: "/assets/partners/ISEIGUR logo.png" },
+  { id: "bta-globalx", name: "BTA GlobalX", src: "/assets/partners/BTA%20GLOBAL%20X.png" },
+  { id: "bta-productions", name: "BTA Productions", src: "/assets/partners/BTA%20PRODUCTION_bgr.jpg.png" },
+  { id: "btv-international", name: "BTV International", src: "/assets/partners/BTV%20International.png" },
+  { id: "european-wellness", name: "European Wellness", src: "/assets/partners/european%20wellness.webp" },
+  { id: "iseigur", name: "ISEIGUR", src: "/assets/partners/ISEIGUR%20logo.png" },
   { id: "shindo", name: "Shindo", src: "/assets/partners/shindo.png" }
 ] as const satisfies readonly SponsorAsset[];
 

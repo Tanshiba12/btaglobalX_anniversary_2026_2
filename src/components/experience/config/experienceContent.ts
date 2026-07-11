@@ -264,12 +264,54 @@ export const timelineBeats: TimelineBeat[] = itinerary.map((segment, index) => (
 }));
 
 export const galleryTiles = [
-  { title: "Ceremony", image: galleryImages[0] },
-  { title: "Red Carpet", image: galleryImages[1] },
-  { title: "Performances", image: galleryImages[2] },
-  { title: "Awards", image: galleryImages[0] },
-  { title: "Networking", image: galleryImages[3] },
-  { title: "Fashion", image: galleryImages[2] }
+  {
+    title: "Ceremony",
+    image: {
+      alt: "BTA GlobalX anniversary ceremony moment",
+      id: "gallery-anniversary-ceremony",
+      src: "/assets/gallery/previous-events/Our%202nd%20Year%20Anniversary%20Celebration/BTA%20Global-10.jpg"
+    }
+  },
+  {
+    title: "Red Carpet",
+    image: {
+      alt: "BTA GlobalX red carpet interview moment",
+      id: "gallery-red-carpet-interview",
+      src: "/assets/gallery/previous-events/Red%20Carpet%20Interviews/BTA%20Global-1280.jpg"
+    }
+  },
+  {
+    title: "Performances",
+    image: {
+      alt: "BTA GlobalX grand finale performance moment",
+      id: "gallery-grand-finale-performance",
+      src: "/assets/gallery/previous-events/KWC%20Grand%20Finale%202025/BTA%20Global-780.jpg"
+    }
+  },
+  {
+    title: "Awards",
+    image: {
+      alt: "BTA GlobalX awardee celebration moment",
+      id: "gallery-awardee-celebration",
+      src: "/assets/gallery/previous-events/Awardees/BTA%20Global-1110.jpg"
+    }
+  },
+  {
+    title: "Networking",
+    image: {
+      alt: "BTA GlobalX seminar and panel discussion moment",
+      id: "gallery-seminar-panel",
+      src: "/assets/gallery/previous-events/Seminar%20%26%20Panel%20Discussion/BTA%20Global-399.jpg"
+    }
+  },
+  {
+    title: "Fashion",
+    image: {
+      alt: "BTA GlobalX walk of excellence moment",
+      id: "gallery-walk-of-excellence",
+      src: "/assets/gallery/previous-events/walk%20of%20excellence/BTA%20Global-961.jpg"
+    }
+  }
 ];
 
 export const registrationSlides = [

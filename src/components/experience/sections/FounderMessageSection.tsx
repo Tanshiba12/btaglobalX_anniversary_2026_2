@@ -1,14 +1,17 @@
 import Image from "next/image";
-import { CalendarDays, MapPin, Sparkles } from "lucide-react";
-import { eventDetails } from "@/data";
 import { founderAssets } from "@/data/assets";
-import { founderMessageParagraphs } from "../config/experienceContent";
-import { SafeIcon } from "../ui/SafeIcon";
+
+const founderMessage =
+  "As we proudly celebrate the 3rd Anniversary of BTA GLOBALx on 1 August 2026 in Johor Bahru, Malaysia, I extend my heartfelt gratitude to every member, partner, entrepreneur, leader, and supporter who has been part of this remarkable journey. What began as a vision to connect businesses, empower entrepreneurs, and build meaningful global collaborations has grown into a thriving international community driven by innovation, excellence, and shared success. Over the past three years, BTA GLOBALx has become a platform where ideas flourish, achievements are celebrated, and opportunities transcend borders. This anniversary is more than a celebration of our milestones-it is a celebration of the people whose dedication, resilience, and passion continue to inspire positive change. Through the BTA GLOBALx Anniversary Gala Night & Excellence Award 2026, we proudly recognize outstanding individuals and organizations whose contributions are making a lasting impact in their industries and communities.";
 
 export function FounderMessageSection() {
   return (
     <section className="site-section founder-message-section">
       <div className="section-inner founder-message-grid">
+        <div className="founder-section-heading" data-animate="text">
+          <h2>FOUNDER&apos;S MESSAGE</h2>
+        </div>
+
         <div className="founder-portrait-card" data-animate="image">
           <span className="founder-light-ring" aria-hidden="true" />
           <div className="founder-portrait-frame">
@@ -27,36 +30,8 @@ export function FounderMessageSection() {
           </div>
         </div>
 
-        <div className="founder-copy" data-stagger>
-          <p className="eyebrow" data-stagger-item>
-            Founder&apos;s Message
-          </p>
-          <h2 data-stagger-item>An invitation to celebrate people building better futures.</h2>
-          <div className="founder-message-body">
-            {founderMessageParagraphs.map((paragraph) => (
-              <p data-stagger-item key={paragraph}>
-                {paragraph}
-              </p>
-            ))}
-          </div>
-          <div className="founder-event-cues" data-stagger-item>
-            <span>
-              <SafeIcon aria-hidden="true" icon={CalendarDays} />
-              Anniversary celebration on {eventDetails.date}
-            </span>
-            <span>
-              <SafeIcon aria-hidden="true" icon={MapPin} />
-              {eventDetails.venue}
-            </span>
-            <span>
-              <SafeIcon aria-hidden="true" icon={Sparkles} />
-              Wellness, culture, partnership, and awards
-            </span>
-          </div>
-          <div className="founder-signature" data-stagger-item>
-            <span>With gratitude,</span>
-            <strong>H.E. Amb. Dr. Sangeeta Biswas, M.D.</strong>
-          </div>
+        <div className="founder-copy" data-animate="text">
+          <p className="founder-message-paragraph">{founderMessage}</p>
         </div>
       </div>
     </section>

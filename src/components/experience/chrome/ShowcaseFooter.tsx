@@ -1,9 +1,37 @@
-import { Mail, MapPin, Phone, Play } from "lucide-react";
+import { Facebook, Instagram, Mail, MapPin, Phone, Play, Youtube } from "lucide-react";
 import { eventDetails } from "@/data";
+import { heroAssets } from "@/data/assets";
 import { SafeIcon } from "../ui/SafeIcon";
+
+const footerSocialLinks = [
+  {
+    href: "https://www.instagram.com/btaglobalx?igsh=em4zeDc1YzhvdDdx",
+    icon: Instagram,
+    label: "Instagram"
+  },
+  {
+    href: "https://www.facebook.com/share/19Dux96DM6/",
+    icon: Facebook,
+    label: "Facebook"
+  },
+  {
+    href: "https://youtube.com/@btaglobalx?si=cdlh7IW8e3o6eXnl",
+    icon: Youtube,
+    label: "YouTube"
+  }
+] as const;
+
 export function ShowcaseFooter() {
   return (
     <footer className="showcase-footer" data-animate="card" id="contact">
+      <div className="section-contained-video-bg" aria-hidden="true">
+        <video className="video-backdrop-blur" autoPlay loop muted playsInline preload="metadata">
+          <source src={heroAssets.backgroundVideo.src} type="video/mp4" />
+        </video>
+        <video className="video-backdrop-contain" autoPlay loop muted playsInline preload="metadata">
+          <source src={heroAssets.backgroundVideo.src} type="video/mp4" />
+        </video>
+      </div>
       <div className="footer-dock-sentinel" aria-hidden="true" />
       <div className="section-inner footer-grid">
         <div className="footer-left">
@@ -45,11 +73,17 @@ export function ShowcaseFooter() {
             </a>
           </div>
           <div className="social-row" aria-label="Social links">
-            {["ig", "x", "yt", "tk", "in"].map((item) => (
-              <span key={item}>{item}</span>
+            {footerSocialLinks.map((item) => (
+              <a href={item.href} key={item.label} rel="noreferrer" target="_blank" aria-label={item.label}>
+                <SafeIcon aria-hidden="true" icon={item.icon} />
+              </a>
             ))}
           </div>
         </div>
+      </div>
+      <div className="section-inner footer-legal-row">
+        <span>Copyright Reserved</span>
+        <span>Prepared by Tanshiba Naorin</span>
       </div>
     </footer>
   );

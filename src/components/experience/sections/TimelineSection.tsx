@@ -1,10 +1,19 @@
 import { Clock3 } from "lucide-react";
 import { eventDetails, itinerary } from "@/data";
+import { heroAssets } from "@/data/assets";
 import { SafeIcon } from "../ui/SafeIcon";
 
 export function TimelineSection() {
   return (
     <section className="site-section timeline-section" id="timeline">
+      <div className="section-contained-video-bg" aria-hidden="true">
+        <video className="video-backdrop-blur" autoPlay loop muted playsInline preload="metadata">
+          <source src={heroAssets.backgroundVideo.src} type="video/mp4" />
+        </video>
+        <video className="video-backdrop-contain" autoPlay loop muted playsInline preload="metadata">
+          <source src={heroAssets.backgroundVideo.src} type="video/mp4" />
+        </video>
+      </div>
       <div className="section-inner timeline-table-layout">
         <div className="section-heading is-left" data-animate="text">
           <p>Timeline / Itinerary</p>
@@ -18,8 +27,6 @@ export function TimelineSection() {
               <tr>
                 <th scope="col">Time</th>
                 <th scope="col">Programme</th>
-                <th scope="col">Experience</th>
-                <th scope="col">Highlights</th>
               </tr>
             </thead>
             <tbody>
@@ -33,9 +40,6 @@ export function TimelineSection() {
                   </td>
                   <td data-label="Programme">
                     <strong>{segment.title}</strong>
-                  </td>
-                  <td data-label="Experience">{segment.scene}</td>
-                  <td data-label="Highlights">
                     <ul>
                       {segment.activities.map((activity) => (
                         <li key={activity}>{activity}</li>

@@ -24,6 +24,8 @@ export type Speaker = {
 export type AwardCategory = {
   title: string;
   description: string;
+  logo: string;
+  nomineeTypes: string[];
 };
 
 export type ItinerarySegment = {
@@ -38,6 +40,7 @@ export type RegistrationPackage = {
   name: string;
   tier: "General" | "Signature" | "Silver" | "Gold" | "Platinum";
   accent: string;
+  price?: string;
   summary: string;
   benefits: string[];
   formUrl?: string;
@@ -54,6 +57,12 @@ export type JourneyAct = {
   title: string;
   subtitle: string;
   description: string;
+  detailSections?: Array<{
+    id: string;
+    title: string;
+    body?: string[];
+    items?: string[];
+  }>;
   highlights: Array<{
     id: string;
     label: string;
