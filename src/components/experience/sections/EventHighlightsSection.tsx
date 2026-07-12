@@ -3,7 +3,6 @@ import {
   Camera,
   Gem,
   Gift,
-  Handshake,
   Mic2,
   Music2,
   Palette,
@@ -16,54 +15,49 @@ import { VideoFrame } from "../ui/VideoFrame";
 
 const highlightPlaceholders = [
   {
-    icon: Mic2,
-    title: "Panel Discussion",
-    body: "The Mind & Life Management"
-  },
-  {
     icon: Camera,
-    title: "Red Carpet",
-    body: "Exclusive Interviews"
+    title: "Red Carpet & Exclusive Interviews",
+    body: "Opening arrivals and media moments"
   },
   {
     icon: Sparkles,
-    title: "Bazaar",
-    body: "Wellness Fair"
+    title: "Bazaar & Wellness Fair",
+    body: "Wellness discoveries and connections"
   },
   {
     icon: Palette,
-    title: "Sustainable Creative",
-    body: "Art Exhibition"
+    title: "Sustainable Creative Art Exhibition",
+    body: "Ideas, artistry, and sustainable expression"
+  },
+  {
+    icon: Mic2,
+    title: "Mental Health & Life Management Seminar 2026",
+    body: "Panel discussion: The Mind & Life Management"
+  },
+  {
+    icon: BadgeCheck,
+    title: "Anniversary Ceremony & Gala Dinner",
+    body: "An evening of celebration and hospitality"
   },
   {
     icon: Gift,
     title: "Lucky Draw",
-    body: "Sponsored celebration prizes"
-  },
-  {
-    icon: BadgeCheck,
-    title: "Anniversary Ceremony",
-    body: "Gala Dinner"
-  },
-  {
-    icon: Handshake,
-    title: "Unveil Strategic",
-    body: "Alliance"
+    body: "Celebration prizes and surprises"
   },
   {
     icon: Music2,
-    title: "Intercultural",
-    body: "Music & Dance"
+    title: "Intercultural Music & Dance",
+    body: "A shared rhythm across cultures"
   },
   {
     icon: Gem,
-    title: "Heritage",
-    body: "Fashion Show"
+    title: "Heritage Fashion Show 2026",
+    body: "A contemporary presentation of heritage"
   },
   {
     icon: Trophy,
-    title: "Excellence Award",
-    body: "2026"
+    title: "Excellence Award 2026",
+    body: "Recognising outstanding achievement"
   }
 ];
 
@@ -73,10 +67,10 @@ export function EventHighlightsSection() {
       <div className="section-inner event-highlights-layout">
         <div className="section-heading is-left" data-animate="text">
           <p>Event Highlights</p>
-          <h2>Ten moments shaping the celebration</h2>
+          <h2>Nine moments shaping the celebration</h2>
           <span>
-            From mind and life management to red carpet visibility, wellness discovery,
-            strategic alliance, cultural performance, and the Excellence Award stage.
+            From red carpet visibility and wellness discovery to seminar insight, gala hospitality,
+            cultural performance, heritage fashion, and the Excellence Award stage.
           </span>
         </div>
 
@@ -89,10 +83,13 @@ export function EventHighlightsSection() {
         />
 
         <div className="highlight-placeholder-grid" data-stagger>
-          {highlightPlaceholders.map((item) => {
+          {highlightPlaceholders.map((item, index) => {
             const Icon = item.icon;
             return (
               <article data-stagger-item key={item.title}>
+                <span className="highlight-sequence" aria-hidden="true">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
                 <SafeIcon aria-hidden="true" icon={Icon} />
                 <p>
                   <strong>{item.title}</strong>

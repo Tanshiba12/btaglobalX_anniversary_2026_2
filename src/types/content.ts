@@ -30,7 +30,7 @@ export type AwardCategory = {
 
 export type ItinerarySegment = {
   time: string;
-  title: string;
+  title?: string;
   scene: string;
   activities: string[];
 };

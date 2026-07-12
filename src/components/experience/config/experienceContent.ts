@@ -260,7 +260,7 @@ export const timelineBeats: TimelineBeat[] = itinerary.map((segment, index) => (
   label: String(index + 1).padStart(2, "0"),
   scene: segment.scene,
   time: segment.time,
-  title: segment.title
+  title: segment.title ?? "Programme"
 }));
 
 export const galleryTiles = [

@@ -3,20 +3,14 @@ import { eventDetails, registrationPackages } from "@/data";
 import { heroAssets } from "@/data/assets";
 import { packageTierIcons } from "../config/experienceContent";
 import { SafeIcon } from "../ui/SafeIcon";
+import { DeferredBackgroundVideo } from "../ui/DeferredBackgroundVideo";
 
 const visibleBenefitCount = 4;
 
 export function RegistrationSection() {
   return (
     <section className="site-section registration-section" id="register">
-      <div className="section-contained-video-bg" aria-hidden="true">
-        <video className="video-backdrop-blur" autoPlay loop muted playsInline preload="metadata">
-          <source src={heroAssets.backgroundVideo.src} type="video/mp4" />
-        </video>
-        <video className="video-backdrop-contain" autoPlay loop muted playsInline preload="metadata">
-          <source src={heroAssets.backgroundVideo.src} type="video/mp4" />
-        </video>
-      </div>
+      <DeferredBackgroundVideo src={heroAssets.backgroundVideo.src} />
       <div className="section-inner registration-layout">
         <div className="section-heading is-left" data-animate="text">
           <p>Registration</p>

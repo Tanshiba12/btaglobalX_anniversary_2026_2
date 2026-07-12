@@ -5,6 +5,9 @@ import { type RefObject, useEffect } from "react";
 type LenisInstance = {
   raf: (time: number) => void;
   destroy: () => void;
+  off: (event: "scroll", callback: () => void) => void;
+  on: (event: "scroll", callback: () => void) => void;
+  resize: () => void;
 };
 
 type LenisConstructor = new (options: Record<string, unknown>) => LenisInstance;
@@ -16,7 +19,9 @@ type UseExperienceMotionOptions = {
 
 export function useExperienceMotion({ rootRef, reducedMotion }: UseExperienceMotionOptions) {
   useEffect(() => {
-    if (!rootRef.current || reducedMotion) {
+    const supportsCinematicMotion = window.matchMedia("(min-width: 901px) and (hover: hover) and (pointer: fine)").matches;
+
+    if (!rootRef.current || reducedMotion || !supportsCinematicMotion) {
       return;
     }
 
@@ -40,6 +45,10 @@ export function useExperienceMotion({ rootRef, reducedMotion }: UseExperienceMot
       gsap.config({ nullTargetWarn: false });
       const Lenis = lenisModule.default as LenisConstructor;
       lenis = new Lenis({ lerp: 0.08, smoothWheel: true, wheelMultiplier: 0.86 });
+      const updateScrollTrigger = () => ScrollTrigger.update();
+      const resizeLenis = () => lenis?.resize();
+      lenis.on("scroll", updateScrollTrigger);
+      ScrollTrigger.addEventListener("refresh", resizeLenis);
 
       const raf = (time: number) => {
         lenis?.raf(time);
@@ -201,11 +210,14 @@ export function useExperienceMotion({ rootRef, reducedMotion }: UseExperienceMot
 
       cleanup = () => {
         context.revert();
-        ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+        lenis?.off("scroll", updateScrollTrigger);
+        ScrollTrigger.removeEventListener("refresh", resizeLenis);
       };
     }
 
-    loadMotion();
+    loadMotion().catch(() => {
+      // Content stays visible when optional motion cannot initialise.
+    });
 
     return () => {
       cancelled = true;

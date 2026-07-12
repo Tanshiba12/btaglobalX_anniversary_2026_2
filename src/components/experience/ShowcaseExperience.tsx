@@ -8,6 +8,7 @@ import { useCountdown } from "./hooks/useCountdown";
 import { useDockMode } from "./hooks/useDockMode";
 import { useExperienceMotion } from "./hooks/useExperienceMotion";
 import { useReducedMotion } from "./hooks/useReducedMotion";
+import { PingPongBackgroundVideo } from "./ui/PingPongBackgroundVideo";
 import { AwardsSection } from "./sections/AwardsSection";
 import { EventHighlightsSection } from "./sections/EventHighlightsSection";
 import { EventJourneySection } from "./sections/EventJourneySection";
@@ -35,12 +36,7 @@ export function ShowcaseExperience() {
       <StickyBottomBar mode={dockMode} />
       <div className="opening-video-shell">
         <div className="opening-video-bg" aria-hidden="true">
-          <video className="video-backdrop-blur" autoPlay loop muted playsInline preload="metadata">
-            <source src={heroAssets.backgroundVideo.src} type="video/mp4" />
-          </video>
-          <video className="video-backdrop-contain" autoPlay loop muted playsInline preload="metadata">
-            <source src={heroAssets.backgroundVideo.src} type="video/mp4" />
-          </video>
+          <PingPongBackgroundVideo className="hero-particle-video" src={heroAssets.backgroundVideo.src} />
         </div>
         <HeroSection countdown={countdown} />
         <EventOverviewVideoSection />

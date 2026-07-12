@@ -9,9 +9,9 @@ export function PartnersSection() {
           <p>Powered by</p>
           <h2>The alliance behind the night</h2>
         </div>
-        <div className="partner-logo-wall" data-stagger aria-label="Official sponsor and partner logos">
-          {sponsorAssets.map((partner) => (
-            <article data-stagger-item key={partner.id}>
+        <div className="partner-logo-wall partner-logo-heart" data-stagger aria-label="Official sponsor and partner logos">
+          {sponsorAssets.map((partner, index) => (
+            <article data-stagger-item data-sponsor-index={index} key={partner.id}>
               <Image alt={`${partner.name} logo`} height={96} loading="eager" src={partner.src} unoptimized width={220} />
               <strong>{partner.name}</strong>
             </article>

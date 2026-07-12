@@ -58,7 +58,7 @@ export const registrationPackages: RegistrationPackage[] = [
       "Nominee placement, subject to jury evaluation for winners",
       "Single Entry Pass",
       "SPECIAL OFFER 2026 for BTA Lifetime Elite Members: International Brand ISEIGUR handcrafted leather bag worth SGD 1000, unlimited lifetime exchange facility, T&C apply",
-      "Upcoming BTA GLOBALx Events/Programs entry fee 20% discount for 1 year, BTA elite members only, T&C apply",
+      "Upcoming BTA GlobalX Events/Programs entry fee 20% discount for 1 year, BTA elite members only, T&C apply",
       "Dedicated before and after event digital promotion",
       ...sharedAccess
     ],

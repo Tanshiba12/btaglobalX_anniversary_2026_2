@@ -117,13 +117,13 @@ export const journeyActs: JourneyAct[] = [
     title: "Anniversary Gala Highlights & Lucky Draw",
     subtitle: "Grand gala dinner and sponsored lucky draw",
     description:
-      "Experience the glamour and excitement of the BTA GLOBALX Anniversary Celebration through an exclusive grand gala dinner and an exciting lucky draw session with exclusive sponsored Products (worth upto USD 10,000). This segment captures memorable moments with distinguished guests, awardees, speakers, and attendees while celebrating achievements, connections, and the spirit of excellence.",
+      "Experience the glamour and excitement of the BTA GlobalX Anniversary Celebration through an exclusive grand gala dinner and an exciting lucky draw session with exclusive sponsored Products (worth upto USD 10,000). This segment captures memorable moments with distinguished guests, awardees, speakers, and attendees while celebrating achievements, connections, and the spirit of excellence.",
     detailSections: [
       {
         id: "key-highlights",
         title: "Key Highlights",
         items: [
-          "Celebration of the BTA GLOBALX 3 Year Anniversary milestone",
+          "Celebration of the BTA GlobalX 3 Year Anniversary milestone",
           "Grand gala dinner experience with elegant dining and networking",
           "Memorable moments from the evening's celebrations and photo sessions",
           "Exciting lucky draw session with special prizes",
@@ -186,19 +186,19 @@ export const journeyActs: JourneyAct[] = [
     id: "excellence-award",
     number: 6,
     title: "Excellence Award 2026",
-    subtitle: "International recognition initiative by BTA GLOBALx",
+    subtitle: "International recognition initiative by BTA GlobalX",
     description:
-      "The BTA GLOBALx Excellence Awards 2026 is a distinguished international recognition initiative by BTA GLOBALx, created to celebrate individuals and organizations whose dedication, innovation, leadership, and service have made a meaningful impact on their industries, communities, and society. More than an awards program, it is a platform that honors purpose, inspires progress, and amplifies the stories of those who are shaping a better future.",
+      "The BTA GlobalX Excellence Awards 2026 is a distinguished international recognition initiative by BTA GlobalX, created to celebrate individuals and organizations whose dedication, innovation, leadership, and service have made a meaningful impact on their industries, communities, and society. More than an awards program, it is a platform that honors purpose, inspires progress, and amplifies the stories of those who are shaping a better future.",
     detailSections: [
       {
         id: "award-purpose",
         title: "Award Purpose",
         body: [
-          "Every achievement has a story - a story of perseverance, resilience, vision, and commitment. Through the BTA GLOBALx Excellence Awards, these stories are brought to the global stage, providing deserving individuals with the recognition they have earned and the opportunity to inspire others across borders. By highlighting real-life journeys of excellence, the awards encourage future leaders, entrepreneurs, professionals, and changemakers to pursue their goals with confidence and purpose.",
-          "Recognition is more than receiving a trophy; it is an affirmation of the positive impact that one person or organization can make. It validates years of hard work, dedication, and sacrifice while strengthening credibility, enhancing professional reputation, and opening doors to new opportunities, partnerships, and collaborations. The BTA GLOBALx Excellence Awards aim to ensure that remarkable contributions do not go unnoticed but instead become a source of inspiration for communities and future generations.",
-          "Aligned with BTA GLOBALx's vision of fostering global collaboration and empowering individuals to achieve sustainable success, this awards program serves as a bridge that connects outstanding people from diverse industries, cultures, and countries. It promotes the exchange of ideas, celebrates excellence without boundaries, and builds a network of leaders who are committed to creating positive and lasting change.",
-          "At its core, the BTA GLOBALx Excellence Awards reflect the belief that recognizing excellence creates a ripple effect. When exceptional individuals are acknowledged, their stories inspire others to dream bigger, lead with integrity, innovate boldly, and contribute meaningfully to society. By celebrating achievement, BTA GLOBALx seeks to cultivate a culture where excellence is valued, leadership is encouraged, and positive impact is multiplied across communities and nations.",
-          "The BTA GLOBALx Excellence Awards 2026 is therefore not only a celebration of accomplishments but also a commitment to empowering people, elevating inspiring voices, and creating a global community where excellence is recognized, shared, and passed on to inspire generations to come."
+          "Every achievement has a story - a story of perseverance, resilience, vision, and commitment. Through the BTA GlobalX Excellence Awards, these stories are brought to the global stage, providing deserving individuals with the recognition they have earned and the opportunity to inspire others across borders. By highlighting real-life journeys of excellence, the awards encourage future leaders, entrepreneurs, professionals, and changemakers to pursue their goals with confidence and purpose.",
+          "Recognition is more than receiving a trophy; it is an affirmation of the positive impact that one person or organization can make. It validates years of hard work, dedication, and sacrifice while strengthening credibility, enhancing professional reputation, and opening doors to new opportunities, partnerships, and collaborations. The BTA GlobalX Excellence Awards aim to ensure that remarkable contributions do not go unnoticed but instead become a source of inspiration for communities and future generations.",
+          "Aligned with BTA GlobalX's vision of fostering global collaboration and empowering individuals to achieve sustainable success, this awards program serves as a bridge that connects outstanding people from diverse industries, cultures, and countries. It promotes the exchange of ideas, celebrates excellence without boundaries, and builds a network of leaders who are committed to creating positive and lasting change.",
+          "At its core, the BTA GlobalX Excellence Awards reflect the belief that recognizing excellence creates a ripple effect. When exceptional individuals are acknowledged, their stories inspire others to dream bigger, lead with integrity, innovate boldly, and contribute meaningfully to society. By celebrating achievement, BTA GlobalX seeks to cultivate a culture where excellence is valued, leadership is encouraged, and positive impact is multiplied across communities and nations.",
+          "The BTA GlobalX Excellence Awards 2026 is therefore not only a celebration of accomplishments but also a commitment to empowering people, elevating inspiring voices, and creating a global community where excellence is recognized, shared, and passed on to inspire generations to come."
         ]
       }
     ],
@@ -251,7 +251,7 @@ export const journeyActs: JourneyAct[] = [
     title: "Red Carpet Exclusives",
     subtitle: "Grand arrivals, media interviews, and spotlight moments",
     description:
-      "Step into the spotlight as distinguished guests, award nominees, speakers, VIPs, and industry leaders make their grand arrival at the BTA GLOBALX Anniversary Gala Night & Excellence Award 2026. This exclusive red carpet experience captures elegant entrances, professional photography, and engaging media interviews, celebrating the remarkable individuals who make the event truly exceptional.",
+      "Step into the spotlight as distinguished guests, award nominees, speakers, VIPs, and industry leaders make their grand arrival at the BTA GlobalX Anniversary Gala Night & Excellence Award 2026. This exclusive red carpet experience captures elegant entrances, professional photography, and engaging media interviews, celebrating the remarkable individuals who make the event truly exceptional.",
     detailSections: [
       {
         id: "key-highlights",

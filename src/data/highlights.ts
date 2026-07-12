@@ -48,7 +48,7 @@ export const highlights: Highlight[] = [
   {
     id: "magazine",
     title: "THE PREMIERE",
-    description: "Official media premiere and partner visibility moment featuring BTA GLOBALX.",
+    description: "Official media premiere and partner visibility moment featuring BTA GlobalX.",
     actId: "premiere",
     icon: BookOpen
   },

@@ -16,8 +16,8 @@ export const eventDetails = {
 };
 
 export const partners: EventPartner[] = [
-  { role: "Organized by", name: "BTA GLOBALX" },
-  { role: "Sponsored by", name: "AYU HERBA PTE LTD" },
+  { role: "Organized by", name: "BTA GlobalX" },
+  { role: "Sponsored by", name: "Ayu Herba Pte Ltd" },
   { role: "Media partnership with", name: "BTA PRODUCTIONS & BTV INTERNATIONAL" },
   { role: "Supporting partnership with", name: "ISEIGUR" }
 ];

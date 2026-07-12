@@ -59,7 +59,7 @@ export function HeroSection({
               MYT {eventDetails.time}
             </span>
           </div>
-          <a className="hero-meta-location" href="#location">
+          <a className="hero-meta-location" href="#contact">
             <SafeIcon aria-hidden="true" icon={MapPin} />
             {eventDetails.venue}
           </a>

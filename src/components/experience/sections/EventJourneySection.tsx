@@ -2,18 +2,12 @@ import Image from "next/image";
 import { journeyActs } from "@/data/journey";
 import { heroAssets } from "@/data/assets";
 import { SafeIcon } from "../ui/SafeIcon";
+import { DeferredBackgroundVideo } from "../ui/DeferredBackgroundVideo";
 
 export function EventJourneySection() {
   return (
     <section className="site-section event-journey-section" id="event-journey">
-      <div className="section-contained-video-bg" aria-hidden="true">
-        <video className="video-backdrop-blur" autoPlay loop muted playsInline preload="metadata">
-          <source src={heroAssets.backgroundVideo.src} type="video/mp4" />
-        </video>
-        <video className="video-backdrop-contain" autoPlay loop muted playsInline preload="metadata">
-          <source src={heroAssets.backgroundVideo.src} type="video/mp4" />
-        </video>
-      </div>
+      <DeferredBackgroundVideo src={heroAssets.backgroundVideo.src} />
       <div className="section-inner event-route-layout">
         <div className="section-heading is-left" data-animate="text">
           <p>Event Route</p>

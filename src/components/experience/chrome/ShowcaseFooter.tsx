@@ -1,7 +1,8 @@
 import { Facebook, Instagram, Mail, MapPin, Phone, Play, Youtube } from "lucide-react";
 import { eventDetails } from "@/data";
-import { heroAssets } from "@/data/assets";
+import { footerAssets } from "@/data/assets";
 import { SafeIcon } from "../ui/SafeIcon";
+import { DeferredBackgroundVideo } from "../ui/DeferredBackgroundVideo";
 
 const footerSocialLinks = [
   {
@@ -24,17 +25,14 @@ const footerSocialLinks = [
 export function ShowcaseFooter() {
   return (
     <footer className="showcase-footer" data-animate="card" id="contact">
-      <div className="section-contained-video-bg" aria-hidden="true">
-        <video className="video-backdrop-blur" autoPlay loop muted playsInline preload="metadata">
-          <source src={heroAssets.backgroundVideo.src} type="video/mp4" />
-        </video>
-        <video className="video-backdrop-contain" autoPlay loop muted playsInline preload="metadata">
-          <source src={heroAssets.backgroundVideo.src} type="video/mp4" />
-        </video>
-      </div>
       <div className="footer-dock-sentinel" aria-hidden="true" />
       <div className="section-inner footer-grid">
         <div className="footer-left">
+          <DeferredBackgroundVideo
+            className="footer-left-video-bg"
+            src={footerAssets.backgroundVideo.src}
+            videoClassName="footer-particle-video"
+          />
           <p className="eyebrow">Location &amp; Contact</p>
           <h2>BTA GlobalX Anniversary &amp; Excellence Awards 2026</h2>
           <div className="footer-card">
@@ -47,7 +45,7 @@ export function ShowcaseFooter() {
               Contact us
             </a>
           </div>
-          <p className="footer-brand">BTA GLOBALX</p>
+          <p className="footer-brand">BTA GlobalX</p>
         </div>
         <div className="footer-right">
           <span>For help</span>
@@ -62,7 +60,6 @@ export function ShowcaseFooter() {
               {phone}
             </a>
           ))}
-          <p>{eventDetails.venue}</p>
           <div className="footer-buttons">
             <a className="outline-pill" href="#register">
               Register
